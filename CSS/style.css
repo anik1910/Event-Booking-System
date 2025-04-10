@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --primary: #A3E635;
+    --primary-dark: #84CC16;
+    --secondary: #000409;
+    --secondary-dark: #151B23
+    --success: #28a745;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #0F172A;
+    --max-width: 1200px;
+    --header-font: "Source Sans 3", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: var(--secondary);
+    color: var(--gray-800);
+    line-height: 1.5;
+}
+nav {
+    /* border-bottom: 1px solid --dark; */
+}
+
+.nav_container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: var(--gray-100);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav_links a:hover {
+    color: var(--primary);
+}
+
+.nav_buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn_sign_up{
+    background-color: var(--primary);
+    color: var(--gray-900);
+}
+
+.btn_sign_up:hover{
+    background-color: var(--primary-dark);
+}
+
+.btn_sign_in{
+    background-color: transparent;
+    border: 1px solid var(--gray-100);
+    color: var(--gray-100);
+}
+
+.btn_sign_in:hover{
+    background-color: var(--dark);
+}
