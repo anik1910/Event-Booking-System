@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="/Javascript/index.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-title">
+            <p>Login</p>
+        </div>
+        <label for="email">Email</label><br>
+        <input type="email" id="log-email-box" placeholder="Enter your Email"><br>
+        <p id="email-error" class="error-message"></p>
+        <label for="password">Password</label><br>
+        <input type="password" id="log-pass-box" placeholder="Enter your password"><br>
+        <p id="password-error" class="error-message"></p>
+
+        <div class="log-btn">
+        <input type="button" name="log-btn" id="login-btn" value="Sign In" onclick="loginvalidation()">
+        </div>
+
+        <div class="foget-pass">
+            <p>
+                Don't have an account 
+                <a href="/View/User_Authentication_feature/signup.html">Register now </a>
+            </p> 
+        </div>
+    </div>
+    
+</body>
+</html>
