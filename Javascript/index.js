@@ -127,3 +127,64 @@ function signupValidation() {
     cpasswordError.innerHTML = "";
   }
 }
+
+// Contact Us Form Validation
+function contactUsValidation() {
+  let nameField = document.getElementById("name");
+  let emailField = document.getElementById("email");
+  let messageField = document.getElementById("message");
+
+  let name = nameField.value.trim();
+  let email = emailField.value.trim();
+  let message = messageField.value.trim();
+
+  let nameError = document.getElementById("name-error");
+  let emailError = document.getElementById("email-error");
+  let messageError = document.getElementById("message-error");
+
+  let valid = true;
+
+  if (name === "") {
+    nameError.innerHTML = "Name is required.";
+    valid = false;
+  } else {
+    nameError.innerHTML = "";
+  }
+  if (email === "") {
+    emailError.innerHTML = "Email is required.";
+    valid = false;
+  } else if (
+    !(
+      (email[0] >= "A" && email[0] <= "Z") ||
+      (email[0] >= "a" && email[0] <= "z") ||
+      (email[0] >= "0" && email[0] <= "9")
+    )
+  ) {
+    emailError.innerHTML = "Please enter a valid email address.";
+    valid = false;
+  } else if (!email.includes("@") || !email.includes(".")) {
+    emailError.innerHTML = "Invalid Email - Must contain '@' and '.'";
+    valid = false;
+  } else {
+    emailError.innerHTML = "";
+  }
+
+  if (message === "") {
+    messageError.innerHTML = "Message is required.";
+    valid = false;
+  } else {
+    messageError.innerHTML = "";
+  }
+
+  if (valid) {
+    alert("Message Sent Successfully!");
+
+    nameField.value = "";
+    emailField.value = "";
+    messageField.value = "";
+
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    messageError.innerHTML = "";
+  }
+}

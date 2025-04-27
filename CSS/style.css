@@ -145,3 +145,68 @@
 #signup-btn:hover {
   background-color: #a0d10a;
 }
+
+/* Contact Us Page CSS */
+.contact-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 40px;
+  width: 360px;
+  background: #272a2e;
+  border-radius: 30px;
+}
+
+.contact-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.field-container {
+  margin-top: 20px;
+}
+
+.field-container label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#name,
+#email,
+#message {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #b6e82e;
+  border-radius: 5px;
+  background-color: #b6e82e33;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#error-message {
+  color: red;
+  font-size: 0.9em;
+  margin: 5px 0 10px 0;
+}
+
+#send-message-btn {
+  width: 380px;
+  padding: 10px;
+  background-color: #b6e82e;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#send-message-btn:hover {
+  background-color: #a0d10a;
+}
