@@ -1,55 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <script src="/Javascript/index.js"></script>
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="signup-title">
+        <p>Register</p>
+      </div>
+      <div class="signup-subtitle">
+        <p>
+          Already have an account?
+          <a href="/View/User_Authentication_feature/login.html">Login</a>
+        </p>
+      </div>
 
-</head>
-<body>
-    <div class="container">
-        <div class="title">
-            <h1>Let's Get Started!</h1>
-            <h4>Create an account to get all features</h4>
+      <div class="field-container">
+        <div>
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter your First Name"
+          />
+          <p id="fname-error" class="error-message"></p>
         </div>
-            <div class="field-container">
-                <form action="">
-                    <div>
-                        <label for="name" id="fname">First Name</label>
-                    </div>
-                    <div>
-                        <input type="text" id="fname">
-                    </div>
-                    <div>
-                        <label for="name" id="lname">Last Name</label>
-                    </div>
-                    <div>
-                        <input type="text" id="fname">
-                    </div>
-                    <div>
-                        <label for="email" id="email">Email Address</label>
-                    </div>
-                    <div>
-                        <input type="email" id="email">
-                    </div>
-                    <div>
-                        <label for="password" id="password">Password</label>
-                    </div>
-                    <div>
-                        <input type="password" id="password">
-                    </div>
-                    <div>
-                        <label for="cpassword" id="cpassword">Confirm Password</label>
-                    </div>
-                    <div>
-                        <input type="password" id="cpassword">
-                    </div>
-                    <div>
-                        <button type="submit">Sign Up</button>
-                    </div>
-                </form>
-            </div>
-    </div>  
-</body>
+
+        <div>
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Enter your Last Name"
+          />
+          <p id="lname-error" class="error-message"></p>
+        </div>
+
+        <div>
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your Email"
+          />
+          <p id="email-error" class="error-message"></p>
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your Password"
+          />
+          <p id="password-error" class="error-message"></p>
+        </div>
+
+        <div>
+          <label for="cpassword">Confirm Password</label>
+          <input
+            type="password"
+            id="cpassword"
+            name="cpassword"
+            placeholder="Confirm your Password"
+          />
+          <p id="cpassword-error" class="error-message"></p>
+        </div>
+
+        <div>
+          <input
+            type="button"
+            name="sign-btn"
+            id="signup-btn"
+            value="Sign Up"
+            onclick="signupValidation()"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
