@@ -289,40 +289,41 @@ function updateProfile() {
   var password = document.getElementById("password");
   var error = document.getElementById("error");
 
-      if (fullName.value !== '') {
-        fullName.placeholder = fullName.value;
-        fullName.value = '';
-        error.innerHTML = "Updated Successfully!";
-        error.style.color = "green";
-      }
-      if (email.value !== '') {
-        email.placeholder = email.value;
-        email.value = '';
-        error.innerHTML = "Updated Successfully!";
-        error.style.color = "green";
-      }
-      if (phone.value !== '') {
-        phone.placeholder = phone.value;
-        phone.value = '';
-        error.innerHTML = "Updated Successfully!";
-        error.style.color = "green";
-      }
-      if (address.value !== '') {
-        address.placeholder = address.value;
-        address.value = '';
-        error.innerHTML = "Updated Successfully!";
-        error.style.color = "green";
-      }
-      if (password.value !== '') {
-        password.value = '';
-        password.placeholder = 'Enter new password';
-        error.innerHTML = "Updated Successfully!";
-        error.style.color = "green";
-      }
-    }
-    function changeImage(input) {
-      if (input.files && input.files[0]) {
-        document.getElementById('preview').src = URL.createObjectURL(input.files[0]);
-    }
+  if (fullName.value !== "") {
+    fullName.placeholder = fullName.value;
+    fullName.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (email.value !== "") {
+    email.placeholder = email.value;
+    email.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (phone.value !== "") {
+    phone.placeholder = phone.value;
+    phone.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (address.value !== "") {
+    address.placeholder = address.value;
+    address.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (password.value !== "") {
+    password.value = "";
+    password.placeholder = "Enter new password";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+}
+function changeImage(input) {
+  if (input.files && input.files[0]) {
+    document.getElementById("preview").src = URL.createObjectURL(
+      input.files[0]
+    );
   }
 }
