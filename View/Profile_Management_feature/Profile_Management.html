@@ -1,11 +1,13 @@
 <head>
-    <link rel="stylesheet" href="/CSS/style.css">
     <script src="/Javascript/index.js"></script>
+    <link rel="stylesheet" href="#">
 </head>
 <body>
   <form>
-    <div>
-      <a href=""><img src="udi.png"></a>
+    <div class="profile-container">
+        <img id="preview" src="udi.png" alt="Profile" class="profile-pic">
+        <br>
+        <input type="file" id="fileInput" accept="image/*" onchange="changeImage(this)">
     </div>
     <div>
       <label>Full Name:</label><br>

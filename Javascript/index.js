@@ -316,3 +316,8 @@ function profilevalidation()
         error.style.color = "green";
       }
     }
+    function changeImage(input) {
+      if (input.files && input.files[0]) {
+        document.getElementById('preview').src = URL.createObjectURL(input.files[0]);
+    }
+  }

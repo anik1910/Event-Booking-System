@@ -219,7 +219,7 @@ textarea {
 }
 
 .link {
-  background-color: inherit;
+  background-color: rgb(8, 88, 54);
   border: 1px;
   outline: 1px;
   cursor: pointer;
@@ -228,12 +228,13 @@ textarea {
 }
 
 .link.active {
-  background-color: #ccc;
+  background-color: #000000;
 }
 .content {
   display: none;
+  color: black;
   padding: 20px;
-  border: 1px solid #cccccc;
+  border: 1px solid #0e0d0d;
   border-top: none;
 }
 .clearfix::after {
