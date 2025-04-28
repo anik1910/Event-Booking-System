@@ -188,102 +188,106 @@ function contactUsValidation() {
     messageError.innerHTML = "";
   }
 }
+
 //Admin Page
-function openTab(evt, id) 
-{
-    
-    var i, content, link;
-    content=document.getElementsByClassName("content");
-    for (i=0; i<content.length;i++) 
-    {
-        content[i].style.display = "none";
-    }
-    link=document.getElementsByClassName("link");
-    for(i=0;i<link.length;i++) 
-    {
-        link[i].className=link[i].className.replace("active","");
-    }
-    document.getElementById(id).style.display = "block";
-    evt.currentTarget.className += "active";
+function openTab(evt, id) {
+  var i, content, link;
+  content = document.getElementsByClassName("content");
+  for (i = 0; i < content.length; i++) {
+    content[i].style.display = "none";
+  }
+  link = document.getElementsByClassName("link");
+  for (i = 0; i < link.length; i++) {
+    link[i].className = link[i].className.replace("active", "");
+  }
+  document.getElementById(id).style.display = "block";
+  evt.currentTarget.className += "active";
 }
 //Profile Management
-function profilevalidation() 
-    {
-      var name = document.getElementById('fullName').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var phone = document.getElementById('phone');
-      var address = document.getElementById('address');
-      var password = document.getElementById('password');
-      var error = document.getElementById('error');
-      var errorn = document.getElementById('errorn');
-      var errore = document.getElementById('errore');
+function profilevalidation() {
+  var name = document.getElementById("fullName").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var phone = document.getElementById("phone");
+  var address = document.getElementById("address");
+  var password = document.getElementById("password");
+  var error = document.getElementById("error");
+  var errorn = document.getElementById("errorn");
+  var errore = document.getElementById("errore");
 
-      if(name=="")
-      {
-        name.placeholder=name.value;
-        name.value='';
-        errore.innerHTML='';
+  if (name == "") {
+    name.placeholder = name.value;
+    name.value = "";
+    errore.innerHTML = "";
+  }
+  if (name !== "") {
+    if (
+      !(name[0] >= "A" && name[0] <= "Z") &&
+      !(name[0] >= "a" && name[0] <= "z")
+    ) {
+      errorn.innerHTML = "Invalid name: Must start with a letter.";
+      errorn.style.color = "red";
+      return;
     }
-    if(name!==""){
-      if (!(name[0] >= 'A' && name[0] <= 'Z') && !(name[0] >= 'a' && name[0] <= 'z')) 
-      {
-        errorn.innerHTML = "Invalid name: Must start with a letter.";
+    let words = name.split(" ").filter((word) => word.length > 0);
+    if (words.length < 2) {
+      errorn.innerHTML = "Invalid name: Must contain at least two words.";
+      errorn.style.color = "red";
+      return;
+    }
+    for (let char of name) {
+      if (
+        !(
+          (char >= "A" && char <= "Z") ||
+          (char >= "a" && char <= "z") ||
+          char === "." ||
+          char === "-" ||
+          char === " "
+        )
+      ) {
+        errorn.innerHTML =
+          "Invalid name: Only letters, dot (.), and dash (-) are allowed.";
         errorn.style.color = "red";
         return;
       }
-      let words = name.split(" ").filter(word => word.length > 0);
-      if (words.length < 2) 
-      {
-        errorn.innerHTML = "Invalid name: Must contain at least two words.";
-        errorn.style.color = "red";
-        return;
-      }
-      for (let char of name) 
-      {
-        if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char === '.' || char === '-' || char === ' ')) 
-        {
-          errorn.innerHTML = "Invalid name: Only letters, dot (.), and dash (-) are allowed.";
-          errorn.style.color = "red";
-          return;
-        }
-      }
     }
-      if (email == "") 
-      {
-        email.placeholder = email.value;
-        email.value = '';
-        errorn.innerHTML="";
-      }
-      if(email!==""){
-      if (!(email[0] >= 'A' && email[0] <= 'Z') && !(email[0] >= 'a' && email[0] <= 'z') && !(email[0] >= '0' && email[0] <= '9')) 
-      {
-        errore.innerHTML = "Invalid email: Must start with a letter or number.";
-        errore.style.color = 'red';
-        return;
-      }
-      if (!email.includes('@') || !email.includes('.')) 
-      {
-        errore.innerHTML = "Invalid email: Must contain '@' and '.'";
-        errore.style.color = 'red';
-        return;
-      }
-      let domainPart = email.split('@')[1];
-      if (!domainPart || domainPart.split('.').length < 2) 
-      {
-        errore.innerHTML = "Invalid email: Invalid domain name (e.g., @example.com).";
-        errore.style.color = 'red';
-        return;
-      }
+  }
+  if (email == "") {
+    email.placeholder = email.value;
+    email.value = "";
+    errorn.innerHTML = "";
+  }
+  if (email !== "") {
+    if (
+      !(email[0] >= "A" && email[0] <= "Z") &&
+      !(email[0] >= "a" && email[0] <= "z") &&
+      !(email[0] >= "0" && email[0] <= "9")
+    ) {
+      errore.innerHTML = "Invalid email: Must start with a letter or number.";
+      errore.style.color = "red";
+      return;
     }
-      updateProfile();
+    if (!email.includes("@") || !email.includes(".")) {
+      errore.innerHTML = "Invalid email: Must contain '@' and '.'";
+      errore.style.color = "red";
+      return;
     }
-    function updateProfile() {
-      var fullName = document.getElementById('fullName');
-      var email = document.getElementById('email');
-      var phone = document.getElementById('phone');
-      var address = document.getElementById('address');
-      var password = document.getElementById('password');
-      var error = document.getElementById('error');
+    let domainPart = email.split("@")[1];
+    if (!domainPart || domainPart.split(".").length < 2) {
+      errore.innerHTML =
+        "Invalid email: Invalid domain name (e.g., @example.com).";
+      errore.style.color = "red";
+      return;
+    }
+  }
+  updateProfile();
+}
+function updateProfile() {
+  var fullName = document.getElementById("fullName");
+  var email = document.getElementById("email");
+  var phone = document.getElementById("phone");
+  var address = document.getElementById("address");
+  var password = document.getElementById("password");
+  var error = document.getElementById("error");
 
       if (fullName.value !== '') {
         fullName.placeholder = fullName.value;
@@ -321,3 +325,4 @@ function profilevalidation()
         document.getElementById('preview').src = URL.createObjectURL(input.files[0]);
     }
   }
+}
