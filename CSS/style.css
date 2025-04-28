@@ -210,3 +210,35 @@ textarea {
 #send-message-btn:hover {
   background-color: #a0d10a;
 }
+
+/*Admin Page CSS*/
+.tab {
+  border: 1px solid #181a19;
+  background-color: #087a32;
+  text-align: left;
+}
+
+.link {
+  background-color: inherit;
+  border: 1px;
+  outline: 1px;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.link.active {
+  background-color: #ccc;
+}
+.content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-top: none;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

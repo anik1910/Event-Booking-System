@@ -1,0 +1,25 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="/Javascript/index.js"></script>
+</head>
+<body>
+<div class="tab">
+    <button class="link" onclick="openTab(event, 'userb')">User Detail</button>
+    <button class="link" onclick="openTab(event, 'eventb')">Event Details</button>
+    <button class="link" onclick="openTab(event, 'requestb')">Requests</button>
+</div>
+<div id="userb" class="content">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit">Search</button>
+    <p id="userb">This is user details</p>
+</div>
+<div id="eventb" class="content">
+    <p id="eventb">This is event details</p>
+</div>
+<div id="requestb" class="content">
+    <p id="requestb">This is requests</p>
+</div>
+<div class="clearfix"></div>
+</body>
+</html>
