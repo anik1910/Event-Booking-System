@@ -1,47 +1,44 @@
-<html>
-    <head>
-        <title>Profile</title>
-    </head>
-    <body>
-        <fieldset>
-            <legend>Profile_Management</legend>
-            <div>
-                <form>
-                    <div>
-                        <label for="avatar" id="avatar">Avatar</label><br>
-                    </div>
-                    <div>
-                        <input type="file" id="avatar"><br> 
-                    </div>
-                    <div>
-                        <label for="name" id="name">First Name</label><br>
-                    </div>
-                    <div>
-                        <input type="text" id="fname"placeholder="Robayed"><br> 
-                    </div>
-                    <div>
-                        <label for="name" id="name">Last Name</label><br>
-                    </div>
-                    <div>
-                        <input type="text" id="lname"placeholder="Rohan"><br>
-                    </div>
-                    <div>
-                        <label for="name" id="email">E-mail</label><br>
-                    </div>
-                    <div>
-                        <input type="text" id="email"placeholder="robayedrohan19@gmail.com"><br>
-                    </div>
-                    <div>
-                        <label for="name" id="password">Password</label><br>
-                    </div>
-                    <div>
-                        <input type="password" id="password"placeholder="rohan1234"><br>
-                    </div>
-                    <div>
-                        <br><button onclick="Updateplaceholder">Update</button>
-                    </div>   
-                </form>
-            </div>
-        </fieldset>
-    </body>
+<head>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="/Javascript/index.js"></script>
+</head>
+<body>
+  <form>
+    <div>
+      <a href=""><img src="udi.png"></a>
+    </div>
+    <div>
+      <label>Full Name:</label><br>
+      <input type="text" id="fullName" name="fullName" placeholder="Robayed Rohan">
+    </div>
+    <div>
+      <p id="errorn"></p>
+    </div>
+    <div>
+      <label>Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="rohan@gmail.com">
+    </div>
+    <div>
+      <p id="errore"></p>
+    </div>
+    <div>
+      <label>Phone Number:</label><br>
+      <input type="text" id="phone" name="phone" placeholder="01301654609">
+    </div>
+    <div>
+      <label>Address:</label><br>
+      <input type="text" id="address" name="address" placeholder="road-19,nikunja-2,dhaka">
+    </div>
+    <div>
+      <label>New Password:</label><br>
+      <input type="password" id="password" name="password" placeholder="Enter new password">
+    </div>
+    <div>
+      <p id="error"></p>
+    </div>
+    <div>
+      <input type="button" value="Submit" onclick="profilevalidation()">
+    </div>
+  </form>
+</body>
 </html>
