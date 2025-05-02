@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/CSS/style.css" />
     <title>EvenBoo | Book Your Event</title>
@@ -32,210 +32,326 @@
       </nav>
     </header>
 
-    <section class="hero-section">
-      <div class="hero-container">
-        <!-- Left side -->
-        <div class="hero-text">
-          <p class="tagline">IGNITE YOUR PASSION</p>
-          <h1>
-            Book Your Spot at<br />
-            the Hottest <span>Events</span><br />
-            Around You
-          </h1>
-          <p class="description">
-            Love concerts, workshops, or exclusive shows? Don’t<br />
-            miss a beat! Discover top events near you and grab<br />
-            your ticket before it’s gone.
-          </p>
-          <button class="btn-explore">Explore Events</button>
-        </div>
+    <!--Hero Section-->
+    <section class="hero-container">
+      <div class="left-hero">
+        <p id="h-s-text">IGNITE YOUR PASSION</p>
+        <h1>Book Your Spot at the Hottest <span>Events</span> Around You</h1>
+        <p>
+          Love concerts, workshops, or exclusive shows? Don’t miss a beat!
+          Discover top events near you and grab your ticket before it's gone.
+        </p>
 
-        <!-- Right side -->
-        <div class="hero-card">
-          <div class="event-card">
-            <h3>Electric Groove Carnival</h3>
-            <p class="location">📍 Coachella Valley</p>
-            <button class="prebook-btn">Pre-book Now</button>
+        <input type="button" class="Explore-btn" value="Explore Events" />
+      </div>
+
+      <div class="right-hero">
+        <img src="/image/pre-book-img-1.png" alt="" />
+
+        <div class="right-hero-cart-details">
+          <div class="hero-cart">
+            <div class="time-span">
+              <span>Aug</span>
+              <span class="span-date">15</span>
+            </div>
+
+            <div class="hero-cart-details">
+              <h3>Electric Groove Carnival</h3>
+              <h6>📍Coachella Valley</h6>
+            </div>
           </div>
+
+          <input type="button" class="pre-book-btn" value="Pre-book Now" />
         </div>
       </div>
     </section>
+    <!--Upcomming Events Section-->
+    <section>
+      <div class="upcomming-event">
+        <div class="upcomming-event-top">
+          <h3>Upcomming Events</h3>
+          <div class="filter-buttons">
+            <input type="button" value="Weekday" class="filter-btn1" />
+            <input type="button" value="Category" class="filter-btn2" />
+          </div>
+        </div>
+      </div>
 
-    <!-- Upcoming Events Section -->
-    <section class="upcoming-events-section">
-      <div class="upcoming-container">
-        <div class="upcoming-header">
-          <h2>Upcomming Events</h2>
-          <div class="filter-btn">
-            <button class="weekdays-btn">Weekdays</button>
-              <button class="category-btn">
-                Category
-              </button>
+      <!--Cart row-1-->
+      <div class="event-cart">
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
+          </div>
+
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
+
+                <span>7PM</span>
+              </div>
+
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
+
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div class="events-grid">
-          <!-- Event Card 1 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
+
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
+          </div>
+
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
+
+                <span>7PM</span>
+              </div>
+
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
+
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Event Card 2 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
-              </div>
-            </div>
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
           </div>
 
-          <!-- Event Card 3 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
-              </div>
-            </div>
-          </div>
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
 
-          <!-- Event Card 4 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
+                <span>7PM</span>
               </div>
-            </div>
-          </div>
 
-          <!-- Event Card 5 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
-              </div>
-            </div>
-          </div>
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
 
-          <!-- Event Card 6 -->
-          <div class="event-item">
-            <div class="event-image">
-              <img src="/image/right-img.jpg" alt="Blues on the Beach" />
-            </div>
-            <div class="event-date">
-              <span class="month">OCT</span>
-              <span class="day">19</span>
-            </div>
-            <div class="event-details">
-              <h3>Blues on the Beach</h3>
-              <p class="event-location">📍 Santa Cruz Boardwalk</p>
-              <div class="event-footer">
-                <span class="event-time">7PM</span>
-                <span class="event-price">$45 - $130</span>
-                <button class="book-now-btn">Book Now</button>
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!--Cart row-2-->
+      <div class="event-cart">
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
+          </div>
+
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
+
+                <span>7PM</span>
+              </div>
+
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
+
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
+          </div>
+
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
+
+                <span>7PM</span>
+              </div>
+
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
+
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-cart-singular">
+          <div class="event-cart-image">
+            <img src="/image/cart-img-1.jpg" alt="" />
+          </div>
+
+          <div class="event-cart1">
+            <div class="event-cart1-info">
+              <div class="schedule-info">
+                <div class="date-span">
+                  <p>OCT</p>
+                  <span>19</span>
+                </div>
+
+                <span>7PM</span>
+              </div>
+
+              <div class="event-cart-info">
+                <h4>Blues on the Beach</h4>
+                <h6>📍Santa Cruz Boardwalk</h6>
+
+                <div class="price-info">
+                  <h4>$45 - $130</h4>
+                  <input type="button" value="Book Now" class="book-now-btn" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer-section">
+    <!--News and Blogs-->
+
+    <section class="news-section">
+      <div class="news-header-text">
+        <span>NEWS AND BLOGS</span>
+        <h3>Stay Updated with Our Event Insights</h3>
+      </div>
+      <div class="news-see-more-btn">
+        <input type="button" value="See More" />
+      </div>
+    </section>
+
+    <!-- News-Cart -->
+    <section>
+      <div class="news-cart">
+        <!-- News-Cart1 -->
+        <div class="news-cart1">
+          <div class="news-img">
+            <img src="/image/right-img.jpg" alt="" />
+          </div>
+
+          <div class="news-cart-bottom">
+            <div class="news-cart-info">
+              <span>June 24, 2025</span>
+              <p>The Rise of Virtual Events: A New Era in Entertainment</p>
+            </div>
+
+            <div class="read-more-btn">
+              <input type="button" value="Read more" />
+            </div>
+          </div>
+        </div>
+
+        <!-- News-Cart2 -->
+        <div class="news-cart1">
+
+          <div class="news-img">
+            <img src="/image/right-img.jpg" alt="">
+          </div>
+    
+          <div class="news-cart-bottom">
+    
+            <div class="news-cart-info">
+              <span>June 24, 2025</span>
+              <p>The Rise of Virtual Events: A New Era in Entertainment</p>
+            </div>
+      
+            <div class="read-more-btn">
+              <input type="button" value="Read more">
+            </div>
+    
+          </div>
+
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
       <div class="footer-container">
-        <div class="footer-top">
-          <div class="footer-social">
-            <p>Follow us</p>
-            <div class="social-icons">
-              <a href="#" class="social-icon"
-                ><i class="ri-facebook-fill"></i
-              ></a>
-              <a href="#" class="social-icon"
-                ><i class="ri-twitter-fill"></i
-              ></a>
-              <a href="#" class="social-icon"
-                ><i class="ri-instagram-line"></i
-              ></a>
-              <a href="#" class="social-icon"
-                ><i class="ri-youtube-fill"></i
-              ></a>
-            </div>
+        <div class="footer-left">
+          <span>Follow Us</span>
+
+          <div class="social-icon">
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.github.com" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
-          <div class="footer-logo">
-            <a href="#">Evenboo</a>
-          </div>
-          <div class="footer-nav">
-            <ul class="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Event</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
+
+          <div class="footer-brand-title">
+            <p>EvenBoo</p>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>© 2025 evenboo. All rights reserved.</p>
+
+        <div class="footer-right">
+          <div class="footer-nav-items">
+            <a href="">Home</a>
+            <a href="">Event</a>
+            <a href="">About Us</a>
+            <a href="">Blog</a>
+            <a href="">Contact Us</a>
+          </div>
+
+          <div class="footer-copyright">
+            <p>© 2025 evenboo. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
