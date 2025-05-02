@@ -5,57 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="/Javascript/index.js"></script>
   </head>
   <body>
-    <div class="contact-container">
-      <div class="contact-title">
-        <p>Contact Us</p>
+    <!--Header-->
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="#">EvenBoo</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+          <div class="nav-btn">
+            <button class="btn-get-started">Get Started</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Form Section-->
+    <section>
+      <div class="contact-container">
+        <div class="contact-title">
+          <h1>Contact <span>Us</span></h1>
+        </div>
+
+        <!--left-content-->
+        <div class="contact-field-container">
+          <div class="contact-left-content">
+            <div>
+              <h3>Get in Touch with Us Today</h3>
+              <p id="p-class">
+                Have questions? Contact Rofaria today for expert assistance with
+                all your real estate needs. We're here to help!
+              </p>
+            </div>
+            <div class="contatc-details">
+              <p>Tel : +1 (212) 555-1212</p>
+              <p>hello@domainsite.com</p>
+              <p>KLLG St, No.99, Pku City, ID 28289</p>
+            </div>
+          </div>
+
+          <!-- right-content -->
+          <div class="contact-right-content">
+            <label for="name">Your Name</label>
+            <input type="text" id="cname" placeholder="Enter your Name" />
+            <p id="name-error" class="error-message"></p>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="cemail" placeholder="Enter your Email" />
+            <p id="email-error" class="error-message"></p>
+
+            <label for="message">Your Message</label>
+            <textarea
+              id="cmessage"
+              rows="5"
+              placeholder="Write your message here"
+            ></textarea>
+            <p id="message-error" class="error-message"></p>
+
+            <div class="send-btn">
+              <input
+                type="submit"
+                id="send-message-btn"
+                value="Send Message"
+                onclick="contactUsValidation()"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="field-container">
-        <div>
-          <label for="name">Your Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your Name"
-          />
-          <p id="name-error" class="error-message"></p>
+    <!-- Footer Section -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <span>Follow Us</span>
+          <div class="social-icon">
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.github.com" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+
+          <div class="footer-brand-title">
+            <p>EvenBoo</p>
+          </div>
         </div>
 
-        <div>
-          <label for="email">Your Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your Email"
-          />
-          <p id="email-error" class="error-message"></p>
-        </div>
+        <div class="footer-right">
+          <div class="footer-nav-items">
+            <a href="">Home</a>
+            <a href="">Event</a>
+            <a href="">About Us</a>
+            <a href="">Blog</a>
+            <a href="">Contact Us</a>
+          </div>
 
-        <div>
-          <label for="message">Your Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Write your message here"
-          ></textarea>
-          <p id="message-error" class="error-message"></p>
-        </div>
-
-        <div>
-          <input
-            type="submit"
-            id="send-message-btn"
-            value="Send Message"
-            onclick="contactUsValidation()"
-          />
+          <div class="footer-copyright">
+            <p>© 2025 evenboo. All rights reserved.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
