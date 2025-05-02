@@ -714,3 +714,97 @@ header nav {
   background-color: #b6e82e;
   color: black;
 }
+
+/* Refund Policy */
+.non-active-btn input {
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #b6e82e10;
+  color: #b6e82e;
+  border: 1px solid #b6e82e14;
+}
+.refund-header-btn {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+.Refund-Terms-active input {
+  background-color: #b6e82e;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+/* Left-Content */
+.left-content h3 {
+  font-size: 24px;
+  color: #b6e82e;
+  margin-bottom: 4px;
+}
+.left-content p {
+  margin-bottom: 8px;
+  width: 60%;
+}
+.left-content span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #b6e82e;
+}
+.left-content {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 118px;
+  margin-right: 118px;
+  gap: 80px;
+}
+.left-content ul {
+  list-style: none;
+}
+.right-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deadline-table {
+  border-collapse: collapse;
+  width: 80%;
+}
+.deadline-table th,
+.deadline-table td {
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  border-bottom: 1px solid #b6e82e14;
+}
+
+.deadline-table th {
+  background-color: #b6e82e10;
+  color: white;
+}
+
+.deadline-table tr:hover {
+  background-color: #b6e82e10;
+  color: #b6e82e;
+}
+.refund-content {
+  margin-left: 380px;
+  margin-right: 380px;
+  margin-top: 80px;
+}
+.contatct-details h3 {
+  font-size: 24px;
+  color: #b6e82e;
+  margin-bottom: 4px;
+}
+.contatct-details p {
+  margin-bottom: 8px;
+  width: 60%;
+}
+.contatct-details {
+  margin-left: 118px;
+  margin-right: 118px;
+}
