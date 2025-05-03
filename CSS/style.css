@@ -724,6 +724,7 @@ header nav {
   background-color: #b6e82e10;
   color: #b6e82e;
   border: 1px solid #b6e82e14;
+  transition: 0.3s;
 }
 .refund-header-btn {
   display: flex;
@@ -737,6 +738,11 @@ header nav {
   border-radius: 12px;
   font-size: 16px;
   font-weight: 500;
+}
+.non-active-btn input:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
 /* Left-Content */
 .left-content h3 {
@@ -850,4 +856,124 @@ select {
   font-size: 16px;
   font-weight: 500;
   margin-top: 24px;
+}
+.req-status-box {
+  margin-left: 680px;
+  margin-right: 680px;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.order-id-check {
+  border: 1px solid #b6e82e;
+  background-color: #b6e82e33;
+  width: 400px;
+  height: 48px;
+  padding-left: 12px;
+  border-radius: 5px;
+}
+
+.req-status-btn input {
+  border-radius: 12px;
+  color: black;
+  background-color: #b6e82e;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px;
+  margin-top: 38px;
+  transition: 0.3s;
+}
+.req-status-btn input:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.req-status-frame {
+  margin-left: 540px;
+  margin-right: 540px;
+  margin-top: 80px;
+  border: 1px solid #a0d10a;
+  border-radius: 12px;
+}
+.req-id-show {
+  padding: 18px;
+  padding-left: 24px;
+  background-color: #b6e82e12;
+}
+.req-id-show span {
+  color: #b6e82e;
+  font-size: 18px;
+  font-weight: 600;
+}
+.req-id-show p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.req-info p {
+  padding-left: 24px;
+  padding-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.req-info span {
+  font-weight: 300;
+}
+.req-status {
+  color: #ffc106;
+}
+.status-timeline {
+  padding: 24px;
+}
+.status-timeline h3 {
+  color: #b6e82e;
+}
+.status-icon #completed {
+  height: 24px;
+  width: 24px;
+  background-color: #29a745;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.status-icon #in-progress {
+  height: 24px;
+  width: 24px;
+  background-color: #ffc106;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.status-icon #pending {
+  height: 24px;
+  width: 24px;
+  background-color: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.status-timeline-view {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.track-bottom-info {
+  margin-left: 540px;
+  margin-right: 540px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+.track-bottom-info h3 {
+  color: #b6e82e;
+  margin-bottom: 8px;
+}
+.track-bottom-info b {
+  color: #b6e82e;
 }
