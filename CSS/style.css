@@ -138,8 +138,9 @@ body {
 }
 
 #signup-btn {
-  width: 364px;
   padding: 10px;
+  padding-left: 98px;
+  padding-right: 104px;
   background-color: #b6e82e;
   color: black;
   border: none;
