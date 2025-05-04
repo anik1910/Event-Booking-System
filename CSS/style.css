@@ -977,3 +977,7 @@ select {
 .track-bottom-info b {
   color: #b6e82e;
 }
+.tabcontent {
+  display: none;
+  width: 100%;
+}

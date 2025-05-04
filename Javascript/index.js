@@ -329,3 +329,25 @@ function changeImage(input) {
 }
 
 //Refund Policy
+
+function openTab(tabName, elmnt, color) {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  for (var i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  var tablinks = document.getElementsByClassName("tablink");
+  for (var i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active-btn");
+    tablinks[i].classList.add("non-active-btn");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+
+  elmnt.parentElement.classList.remove("non-active-btn");
+  elmnt.parentElement.classList.add("active-btn");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("defaultOpen").click();
+});
