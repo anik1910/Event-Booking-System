@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+/* Global Reset and Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #101010;
+  padding: 20px;
+}
+.selected-seat {
+  background-color: lightgreen;
+}
+/* Headline */
+#ticketh {
+  text-align: center;
+  font-size: 36px;
+  color: #adff2f;
+  margin-bottom: 30px;
+}
+
+/* Containers */
+.seattype, div {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+}
+
+input[name="vipseat"] {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+}
+input[name="regularseat"] {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+}
+input[name="groupseat"] {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #b5ff3d;
+  font-size: 18px;
+}
+
+/* Inputs */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #b5ff3d;
+  transform: scale(1.2);
+}
+
+/* Ticket Quantity Input */
+input[type="number"] {
+  padding: 5px 10px;
+  width: 200px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #222;
+  color: #fff;
+}
+
+/*Promo Code Input*/
+input[type="text"] {
+  padding: 5px 10px;
+  width: 200px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #222;
+  color: #fff;
+}
+
+/*Table Styling */
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px;
+  color: #ddd;
+}
+
+td p {
+  margin: 0;
+  font-weight: 600;
+  color: #b5ff3d;
+}
+
+/*for seat*/
+input[type='button']:disabled {
+  background-color: #ccc;
+  color: #666;
+}
+.selected-seat {
+  background-color: green;
+  color: rgb(10, 237, 105);
+  font-weight: bold;
+}
+
+/*purchase*/
+input[id="tsubmit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #b6e82e;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[id="tsubmit"]:hover {
+  background-color: #d0ff40;
+}
