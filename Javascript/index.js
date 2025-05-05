@@ -1,4 +1,3 @@
-//Login-Validation
 function loginvalidation() {
   let emailField = document.getElementById("log-email-box");
   let passField = document.getElementById("log-pass-box");
@@ -9,14 +8,17 @@ function loginvalidation() {
   let error = document.getElementById("email-error");
   let error1 = document.getElementById("password-error");
 
-  var valid = true;
+  let valid = true;
 
-  if (pass == "") {
+  error.innerHTML = "";
+  error1.innerHTML = "";
+
+  if (pass === "") {
     error1.innerHTML = "The field is empty";
     valid = false;
   }
 
-  if (email == "") {
+  if (email === "") {
     error.innerHTML = "The field is empty";
     valid = false;
   } else {
@@ -37,13 +39,9 @@ function loginvalidation() {
 
   if (valid) {
     alert("Login Successful");
-
-    emailField.value = "";
-    passField.value = "";
-
-    error.innerHTML = "";
-    error1.innerHTML = "";
   }
+
+  return valid;
 }
 
 //Signup-Validation
