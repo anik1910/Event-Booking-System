@@ -10,7 +10,7 @@
         }else if($email == $password){
             //echo "valid user!";
             $_SESSION['status'] = true;
-            header('location: ');
+            header('location: home.php');
         }else{
             echo "invalid user!";
         }
