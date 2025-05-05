@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #14171c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+form {
+  background-color: #1f2229;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[id="pmfullName"],
+input[id="pmemail"],
+input[id="pmphone"],
+input[id="pmaddress"],
+input[id="pmpassword"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #b6e82e;
+  border-radius: 5px;
+  background-color: #b6e82e33;
+  color: white;
+}
+
+input[id="pmfullName"]::placeholder,
+input[id="pmemail"]::placeholder,
+input[id="pmphone"]::placeholder,
+input[id="pmaddress"]::placeholder,
+input[id="pmpassword"]::placeholder {
+  color: #f0ecec;
+  opacity: 1;
+}
+
+
+input[id="pmsubmit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #b6e82e;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[id="pmsubmit"]:hover {
+  background-color: #d0ff40;
+}
+
+#errorn,
+#errore {
+  color: red;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
+
+#pmerror {
+  color: green;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.profile-container {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+input[type="file"] {
+  margin-top: 15px;
+  font-size: 14px;
+}
+

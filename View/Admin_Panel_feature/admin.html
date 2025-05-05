@@ -1,25 +1,48 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script src=".js"></script>
+  <link rel="stylesheet" href="/CSS/astyle.css">
 </head>
 <body>
-<div class="tab">
-    <button class="link" onclick="openTab(event, 'userb')">User Detail</button>
+
+  <div class="atab">
+    <button class="link active" onclick="openTab(event, 'userb')">User Detail</button>
     <button class="link" onclick="openTab(event, 'eventb')">Event Details</button>
     <button class="link" onclick="openTab(event, 'requestb')">Requests</button>
-</div>
-<div id="userb" class="content">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit">Search</button>
-    <p id="userb">This is user details</p>
-</div>
-<div id="eventb" class="content">
-    <p id="eventb">This is event details</p>
-</div>
-<div id="requestb" class="content">
-    <p id="requestb">This is requests</p>
-</div>
-<div class="clearfix"></div>
+  </div>
+
+  <div class="acontainer">
+    <div id="userb" class="acontent" style="display: block;">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Search</button>
+      <p>This is user details</p>
+    </div>
+
+    <div id="eventb" class="acontent">
+      <p>This is event details</p>
+    </div>
+
+    <div id="requestb" class="acontent">
+      <p>This is requests</p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(evt, tabId) {
+      var contents = document.getElementsByClassName("acontent");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+
+      var links = document.getElementsByClassName("link");
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+
+      document.getElementById(tabId).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
 </body>
 </html>

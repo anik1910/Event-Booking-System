@@ -1,0 +1,171 @@
+<head>
+    <link rel="stylesheet" href="/CSS/pstyle.css">
+</head>
+<body>
+  <form>
+    <div class="profile-container">
+      <img id="preview" src="udi.png" alt="Profile" class="profile-pic">
+      <br>
+      <input type="file" id="fileInput" accept="image/*" onchange="changeImage(this)">
+  </div>
+    <div>
+      <label>Full Name:</label><br>
+      <input type="text" id="pmfullName" name="fullName" placeholder="Robayed Rohan">
+    </div>
+    <div>
+      <p id="errorn"></p>
+    </div>
+    <div>
+      <label>Email:</label><br>
+      <input type="email" id="pmemail" name="email" placeholder="rohan@gmail.com">
+    </div>
+    <div>
+      <p id="errore"></p>
+    </div>
+    <div>
+      <label>Phone Number:</label><br>
+      <input type="text" id="pmphone" name="phone" placeholder="01301654609">
+    </div>
+    <div>
+      <label>Address:</label><br>
+      <input type="text" id="pmaddress" name="address" placeholder="road-19,nikunja-2,dhaka">
+    </div>
+    <div>
+      <label>New Password:</label><br>
+      <input type="password" id="pmpassword" name="password" placeholder="Enter new password">
+    </div>
+    <div>
+      <p id="error"></p>
+    </div>
+    <div>
+      <input id ="pmsubmit" type="button" value="Submit" onclick="profilevalidation()">
+    </div>
+  </form>
+  <script>
+  //Profile Management
+function profilevalidation() {
+  var name = document.getElementById("pmfullName").value.trim();
+  var email = document.getElementById("pmemail").value.trim();
+  var phone = document.getElementById("pmhone");
+  var address = document.getElementById("pmaddress");
+  var password = document.getElementById("pmpassword");
+  var error = document.getElementById("error");
+  var errorn = document.getElementById("errorn");
+  var errore = document.getElementById("errore");
+
+  if (name == "") {
+    name.placeholder = name.value;
+    name.value = "";
+    errore.innerHTML = "";
+  }
+  if (name !== "") {
+    if (
+      !(name[0] >= "A" && name[0] <= "Z") &&
+      !(name[0] >= "a" && name[0] <= "z")
+    ) {
+      errorn.innerHTML = "Invalid name: Must start with a letter.";
+      errorn.style.color = "red";
+      return;
+    }
+    let words = name.split(" ").filter((word) => word.length > 0);
+    if (words.length < 2) {
+      errorn.innerHTML = "Invalid name: Must contain at least two words.";
+      errorn.style.color = "red";
+      return;
+    }
+    for (let char of name) {
+      if (
+        !(
+          (char >= "A" && char <= "Z") ||
+          (char >= "a" && char <= "z") ||
+          char === "." ||
+          char === "-" ||
+          char === " "
+        )
+      ) {
+        errorn.innerHTML =
+          "Invalid name: Only letters, dot (.), and dash (-) are allowed.";
+        errorn.style.color = "red";
+        return;
+      }
+    }
+  }
+  if (email == "") {
+    email.placeholder = email.value;
+    email.value = "";
+    errorn.innerHTML = "";
+  }
+  if (email !== "") {
+    if (
+      !(email[0] >= "A" && email[0] <= "Z") &&
+      !(email[0] >= "a" && email[0] <= "z") &&
+      !(email[0] >= "0" && email[0] <= "9")
+    ) {
+      errore.innerHTML = "Invalid email: Must start with a letter or number.";
+      errore.style.color = "red";
+      return;
+    }
+    if (!email.includes("@") || !email.includes(".")) {
+      errore.innerHTML = "Invalid email: Must contain '@' and '.'";
+      errore.style.color = "red";
+      return;
+    }
+    let domainPart = email.split("@")[1];
+    if (!domainPart || domainPart.split(".").length < 2) {
+      errore.innerHTML =
+        "Invalid email: Invalid domain name (e.g., @example.com).";
+      errore.style.color = "red";
+      return;
+    }
+  }
+  updateProfile();
+}
+function updateProfile() {
+  var fullName = document.getElementById("pmfullName");
+  var email = document.getElementById("pmemail");
+  var phone = document.getElementById("pmphone");
+  var address = document.getElementById("pmaddress");
+  var password = document.getElementById("pmpassword");
+  var error = document.getElementById("error");
+
+  if (fullName.value !== "") {
+    fullName.placeholder = fullName.value;
+    fullName.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (email.value !== "") {
+    email.placeholder = email.value;
+    email.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (phone.value !== "") {
+    phone.placeholder = phone.value;
+    phone.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (address.value !== "") {
+    address.placeholder = address.value;
+    address.value = "";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+  if (password.value !== "") {
+    password.value = "";
+    password.placeholder = "Enter new password";
+    error.innerHTML = "Updated Successfully!";
+    error.style.color = "green";
+  }
+}
+function changeImage(input) {
+  if (input.files && input.files[0]) {
+    document.getElementById("preview").src = URL.createObjectURL(
+      input.files[0]
+    );
+  }
+}
+  </script>
+</body>
+</html>
