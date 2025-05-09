@@ -5,6 +5,9 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+#cart-scroll {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #14171c;
   color: white;
