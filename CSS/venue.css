@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+  }
+
+    body {
+      background-color: #14171c;
+      color: white;
+      min-height: 100vh;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    #venue {
+      text-align: center;
+      color: #b5ff3d;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    .icontainer {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .imySlides img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cursor {
+      cursor: pointer;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    .caption-container {
+      text-align: center;
+      background-color: #1e1e1e;
+      padding: 10px 16px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .vrow:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .vcolumn {
+      float: left;
+      width: 16.66%;
+      padding: 4px;
+    }
+
+    .vdemo {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .active,
+    .vdemo:hover {
+      opacity: 1;
+    }
+
+    .veheader-title{
+      font-size: 38px;
+      font-weight: bold;
+      color: #b5ff3d;
+      margin-left: 50px;
+    }
+    .veheader-btn input{
+      padding: 12px;
+      border-radius: 12px;
+      margin-left: 1050px;
+      background-color: #b6e82e;
+      color: black;
+    }
+    .veheader{
+      display: flex;
+      flex-direction: row;
+      margin-left: 88px;
+      margin-top: 30px;
+    }
