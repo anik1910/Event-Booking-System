@@ -1,12 +1,12 @@
 <head>
-    <link rel="stylesheet" href="/CSS/pstyle.css">
+    <link rel="stylesheet" href="../../CSS/pstyle.css">
 </head>
 <body>
-  <form>
+  <form method="post" action="../../controller/imgupload.php" enctype="multipart/form-data">
     <div class="profile-container">
       <img id="preview" src="udi.png" alt="Profile" class="profile-pic">
       <br>
-      <input type="file" id="fileInput" accept="image/*" onchange="changeImage(this)">
+      <input type="file" id="fileInput" name="myfile" value="" accept="image/*" onchange="changeImage(this)">
   </div>
     <div>
       <label>Full Name:</label><br>
@@ -38,7 +38,7 @@
       <p id="error"></p>
     </div>
     <div>
-      <input id ="pmsubmit" type="button" value="Submit" onclick="profilevalidation()">
+      <input id ="pmsubmit" type="submit" value="Submit" onclick="profilevalidation()">
     </div>
   </form>
   <script>
