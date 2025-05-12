@@ -19,8 +19,7 @@
             header('location: ../View/Ticket_Types_feature/ticket.php');
             exit();
         }else{
-            echo "invalid request! please submit the form frist!";
-            header('location: ../View/User_Authentication_feature/login.html');
+            // echo "invalid user!";
         }
     }else{
         echo "invalid request! please submit the form frist!";
