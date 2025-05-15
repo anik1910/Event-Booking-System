@@ -170,8 +170,8 @@ body {
 }
 .contact-field-container {
   display: flex;
-  gap: 320px;
-  margin: 0px 320px 0px 320px;
+  gap: 160px;
+  margin: 0px 140px 0px 140px;
   /* border: 1px solid red; */
 }
 .contact-left-content {
@@ -278,8 +278,8 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 340px;
-  padding-right: 340px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .nav-logo a {
@@ -334,8 +334,8 @@ header nav {
   display: flex;
   align-items: center;
   gap: 98px;
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 84px;
 }
 
@@ -446,9 +446,9 @@ header nav {
 /* Footer Section */
 .footer-container {
   display: flex;
-  gap: 440px;
-  margin-left: 380px;
-  margin-right: 380px;
+  gap: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 80px;
 }
 .footer-nav-items {
@@ -468,7 +468,7 @@ header nav {
   border-bottom: 2px solid #b6e82e; */
 }
 .footer-copyright {
-  margin-left: 200px;
+  margin-left: 180px;
 }
 .footer-copyright {
   font-size: 16px;
@@ -524,10 +524,10 @@ header nav {
 /* Hero-Upcomming Event */
 .upcomming-event-top {
   display: flex;
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 80px;
-  gap: 292px;
+  gap: 320px;
 }
 .filter-buttons {
   display: flex;
@@ -545,13 +545,13 @@ header nav {
   border: 1px solid #b6e82e14;
 }
 .upcomming-event-top h3 {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: bold;
 }
 /* Cart-1 */
 .event-cart {
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 80px;
 }
 .event-cart-singular {
@@ -587,12 +587,12 @@ header nav {
 }
 .price-info {
   display: flex;
-  gap: 32px;
+  gap: 18px;
   color: #b6e82e;
   align-items: center;
 }
 .price-info h4 {
-  font-size: 18px;
+  font-size: 16px;
 }
 .price-info .book-now-btn {
   height: 40px;
@@ -645,21 +645,22 @@ header nav {
 /* News and blogs */
 
 .news-section {
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 190px;
 }
 .news-see-more-btn input {
-  width: 188px;
-  height: 60px;
+  width: 158px;
+  height: 56px;
   border-radius: 12px;
   background-color: #b6e82e;
   font-size: 18px;
   font-weight: bold;
+  margin-top: 28px;
 }
 .news-header-text span {
   font-size: 18px;
@@ -667,20 +668,20 @@ header nav {
   color: #b6e82e;
 }
 .news-header-text h3 {
-  font-size: 44px;
+  font-size: 38px;
   font-weight: bold;
 }
 
 /* News-Cart */
 .news-cart {
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 140px;
+  margin-right: 140px;
   margin-top: 80px;
   display: flex;
-  gap: 72px;
+  gap: 22px;
 }
 .news-cart .news-cart1 {
-  width: 536px;
+  width: 526px;
   height: 428px;
   border-radius: 20px;
 }
@@ -801,8 +802,8 @@ header nav {
   color: #b6e82e;
 }
 .refund-content {
-  margin-left: 380px;
-  margin-right: 380px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 80px;
 }
 .contatct-details h3 {
@@ -823,8 +824,8 @@ header nav {
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  margin-left: 680px;
-  margin-right: 680px;
+  margin-left: 280px;
+  margin-right: 280px;
   margin-top: 80px;
   gap: 18px;
   border: 1px solid #b6e82e10;
@@ -860,10 +861,16 @@ select {
   font-size: 16px;
   font-weight: 500;
   margin-top: 24px;
+  width: 50%;
+  transition: 0.3s;
+}
+.req-cancel-btn input:hover {
+  background-color: white;
+  cursor: pointer;
 }
 .req-status-box {
-  margin-left: 680px;
-  margin-right: 680px;
+  margin-left: 420px;
+  margin-right: 420px;
   margin-top: 80px;
   display: flex;
   align-items: center;
@@ -894,8 +901,8 @@ select {
   cursor: pointer;
 }
 .req-status-frame {
-  margin-left: 540px;
-  margin-right: 540px;
+  margin-left: 240px;
+  margin-right: 240px;
   margin-top: 80px;
   border: 1px solid #a0d10a;
   border-radius: 12px;
@@ -969,8 +976,8 @@ select {
   margin-top: 12px;
 }
 .track-bottom-info {
-  margin-left: 540px;
-  margin-right: 540px;
+  margin-left: 240px;
+  margin-right: 240px;
   margin-top: 20px;
   border-radius: 12px;
 }
