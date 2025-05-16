@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <title>EvenBoo | Payment</title>
     <link rel="stylesheet" href="../../asset/CSS/style.css" />
     <link
       rel="stylesheet"
@@ -17,63 +17,123 @@
       <nav>
         <div class="nav-container">
           <div class="nav-logo">
-            <a href="#">EvenBoo</a>
+            <a href="landing_page.html">EvenBoo</a>
           </div>
-          <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Event</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-          <div class="nav-btn">
-            <button class="btn-get-started">Get Started</button>
+          <div class="right-nav">
+            <div class="user-info">
+              <span>Welcome</span>
+              <a href="../Profile_Management_feature/profilemanagement.html">
+                <span class="user">Anik</span>
+              </a>
+            </div>
+            <div class="nav-icon">
+              <a href="#"><i class="fa-solid fa-bell"></i></a>
+              <a href="#"><i class="fa-solid fa-gear"></i></a>
+              <a href="../Landing_Page_feature/landing_page.html"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- Footer Section -->
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <span>Follow Us</span>
-
-          <div class="social-icon">
-            <a href="https://www.facebook.com" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://www.github.com" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://www.youtube.com" target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
+    <section class="payment-content">
+      <div class="left-payment-content">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+        </div>
+        <div class="event-schedule-info">
+          <p>Music Festival 2025</p>
+          <span>May 15, 2025 | 8:00 PM</span><br />
+          <span>📍Grand Arena, New York</span>
+        </div>
+        <div class="product-title">
+          <div class="product-with-price">
+            <p>VIP Ticket X2</p>
+            <span>BDT 150</span>
           </div>
-
-          <div class="footer-brand-title">
-            <p>EvenBoo</p>
+          <div class="product-with-price">
+            <p>Regular Ticket X1</p>
+            <span>BDT 45</span>
+          </div>
+          <div class="product-with-price">
+            <p>Booking Fee</p>
+            <span>BDT 10</span>
+          </div>
+          <div class="product-with-price">
+            <p class="promo">Promo: SUMMER25</p>
+            <span class="promo">-BDT 150</span>
           </div>
         </div>
-
-        <div class="footer-right">
-          <div class="footer-nav-items">
-            <a href="">Home</a>
-            <a href="">Event</a>
-            <a href="">About Us</a>
-            <a href="">Blog</a>
-            <a href="">Contact Us</a>
-          </div>
-
-          <div class="footer-copyright">
-            <p>© 2025 evenboo. All rights reserved.</p>
-          </div>
+        <div class="total-price">
+          <p class="total">Total Amount</p>
+          <span class="total-amount">BDT 150</span>
         </div>
       </div>
-    </footer>
+
+      <div class="right-payment-content">
+        <div class="order-summary">
+          <h3>Checkout</h3>
+          <p>Complete your purchase to confirm your spot</p>
+        </div>
+
+        <div class="online-pay">
+          <input type="button" value="Apple Pay" />
+          <input type="button" value="Google Pay" />
+        </div>
+
+        <div class="or-pay">
+          <p>OR PAY WITH CARD</p>
+        </div>
+
+        <div class="card-pay">
+          <input type="button" value="Visa  ******4242" />
+          <input type="button" value="Mastercard  *****5252" />
+        </div>
+
+        <div class="add-new-card">
+          <p>New Card</p>
+
+          <div class="field">
+            <label for="">Name on Card</label><br />
+            <input type="text" name="" id="" placeholder="Anik Das" /><br />
+            <p class="error-cardname"></p>
+          </div>
+          <div class="field">
+            <label for="">Card Number</label><br />
+            <input
+              type="number"
+              name=""
+              id=""
+              placeholder="1234 5678 91011 1213"
+            /><br />
+            <p class="error-cardnumber"></p>
+          </div>
+
+          <div class="ex-cvc">
+            <div>
+              <label for="">Expiration Date</label><br />
+              <input type="number" name="" id="" placeholder="MM/YY" />
+              <p class="error-cardexpire"></p>
+            </div>
+            <div>
+              <label for="">CVC</label><br />
+              <input type="number" name="" id="" placeholder="123" /><br />
+              <p class="error-cardCVC"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="">Zip / Postal Code</label><br />
+            <input type="number" name="" id="" placeholder="12345" /><br />
+            <p class="error-cardnumber"></p>
+          </div>
+        </div>
+        <div class="cmplt-purchase">
+          <input type="button" value="Complete Purchase" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
