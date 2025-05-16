@@ -131,9 +131,34 @@
           </div>
         </div>
         <div class="cmplt-purchase">
-          <input type="button" value="Complete Purchase" />
+          <input
+            type="button"
+            id="completePurchaseBtn"
+            value="Complete Purchase"
+          />
         </div>
       </div>
     </section>
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="closePopup()">×</button>
+
+        <div class="Complete-payment">
+          <div class="payment-status-icon">
+            <i class="fa-solid fa-check" id="completed"></i>
+          </div>
+          <div class="complete-msg">
+            <h2>Payment Successful</h2>
+            <p>Your E-ticket has been delivered to your email</p>
+          </div>
+        </div>
+
+        <div class="complete-pop-btn">
+          <button class="get-eticket-btn" onclick="">Get E-ticket</button>
+          <button class="get-invoice-btn" onclick="">Download Invoice</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

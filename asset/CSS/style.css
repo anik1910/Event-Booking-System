@@ -1419,3 +1419,91 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* OVERLAY_TEST */
+.popup h2 {
+  color: #b6e82e;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  border-radius: 18px;
+  border: 1px solid #dadada10;
+  background-color: black;
+  width: 90%;
+  max-width: 500px;
+  padding: 60px;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 34px;
+  background: none;
+  border: none;
+  font-size: 34px;
+  cursor: pointer;
+  color: white;
+}
+.payment-status-icon #completed {
+  height: 68px;
+  width: 68px;
+  background-color: #28ac17;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.Complete-payment {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.payment-status-icon .fa-solid.fa-check {
+  font-size: 38px;
+}
+.complete-msg {
+  color: white;
+}
+.get-eticket-btn,
+.get-invoice-btn {
+  padding: 12px;
+  margin-top: 28px;
+  margin-right: 24px;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid #b6e82e14;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.get-eticket-btn:hover,
+.get-invoice-btn:hover {
+  background-color: #b6e82e;
+  color: black;
+  cursor: pointer;
+}
+.complete-pop-btn {
+  margin-top: 24px;
+  margin-left: 28px;
+  display: flex;
+  justify-content: center;
+}

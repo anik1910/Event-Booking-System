@@ -349,3 +349,19 @@ function openTab(tabName, elmnt, color) {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("defaultOpen").click();
 });
+
+//OVERLAY-TEST
+
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const completePurchaseBtn = document.getElementById("completePurchaseBtn");
+  const overlay = document.getElementById("overlay");
+
+  completePurchaseBtn.addEventListener("click", function () {
+    overlay.style.display = "flex";
+  });
+});
+
+function closePopup() {
+  document.getElementById("overlay").style.display = "none";
+}
