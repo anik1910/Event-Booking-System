@@ -1002,3 +1002,249 @@ select {
   display: none;
   width: 100%;
 }
+
+/* Event-Calender-Feature */
+
+.right-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-icon {
+  display: flex;
+  gap: 20px;
+}
+.nav-icon i {
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.nav-icon a {
+  text-decoration: none;
+}
+.nav-icon i:hover {
+  background-color: #b6e82e;
+  cursor: pointer;
+}
+.user-info span {
+  font-size: 18px;
+  color: white;
+  margin-left: 4px;
+}
+.user-info .user:hover {
+  cursor: pointer;
+  color: #b6e82e;
+}
+.user-info a {
+  text-decoration: none;
+}
+.left-filter {
+  border: 1px solid #b6e82e;
+  border-radius: 8px;
+  background-color: #b6e82e12;
+  width: 20%;
+  height: 100%;
+  margin-left: 140px;
+  margin-top: 40px;
+  padding: 34px;
+}
+.filter-top {
+  display: flex;
+  align-items: center;
+  gap: 68px;
+}
+.filter-top input {
+  border-radius: 12px;
+  color: black;
+  background-color: #b6e82e;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px;
+  transition: 0.3s;
+}
+.weekday {
+  margin-top: 18px;
+}
+.weekday input {
+  background-color: white;
+}
+
+.weekday p {
+  margin-bottom: 14px;
+}
+.weekday input[type="checkbox"],
+.weekday label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.weekday label {
+  margin-left: 8px;
+}
+.filter-category {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.filter-category input {
+  background-color: white;
+}
+.filter-category hr {
+  margin-top: 24px;
+}
+.filter-category p {
+  margin-bottom: 14px;
+}
+.filter-category input[type="checkbox"],
+.filter-category label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.filter-category label {
+  margin-left: 8px;
+}
+.left-filter p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b6e82e;
+}
+.left-filter span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.profile-content {
+  display: flex;
+  gap: 24px;
+}
+.right_content {
+  border: 1px solid #b6e82e;
+  border-radius: 8px;
+  background-color: #b6e82e12;
+  width: 80%;
+  height: 100%;
+  margin-right: 140px;
+  margin-top: 40px;
+  padding: 34px;
+}
+
+/* Profile-Event-Cart */
+
+.event-card-horizontal {
+  display: flex;
+  width: 100%;
+  height: 180px;
+  border: 1px solid #dadada10;
+  background-color: #0b0b0b1e;
+  border-radius: 16px;
+  overflow: hidden;
+  /* gap: 68px; */
+}
+
+/* Image Section */
+.event-card-image {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Section */
+.event-card-content {
+  width: 60%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.event-card-content-inner {
+  display: flex;
+  gap: 54px;
+}
+
+/* Date and Time */
+.event-card-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.event-date {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.event-date p {
+  font-size: 26px;
+  font-weight: 400;
+}
+.event-date span {
+  font-size: 24px;
+  font-weight: bold;
+}
+.event-card-schedule span {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Event Info */
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.event-details h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.event-details h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Price & Button */
+.event-price {
+  display: flex;
+  gap: 18px;
+  color: #b6e82e;
+  align-items: center;
+}
+.event-price h4 {
+  font-size: 16px;
+}
+.book-now-button {
+  height: 40px;
+  width: 128px;
+  border-radius: 12px;
+  background-color: #b6e82e10;
+  border: 1px solid #b6e82e14;
+  color: #b6e82e;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.book-now-button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.filtered-event {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+.r-title {
+  font-size: 26px;
+  font-weight: bold;
+}
