@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link rel="stylesheet" href="../../CSS/style.css" />
-    <script src="../../Javascript/index.js"></script>
+    <link rel="stylesheet" href="../../asset/CSS/style.css" />
+    <script src="../../asset/Javascript/index.js"></script>
   </head>
   <body>
     <div class="signup-container">
@@ -15,13 +15,13 @@
       <div class="signup-subtitle">
         <p>
           Already have an account?
-          <a href="/View/User_Authentication_feature/login.html">Login</a>
+          <a href="login.html">Login</a>
         </p>
       </div>
 
       <div class="field-container">
         <div>
-          <label for="fname">First Name</label>
+          <label for="fname">Full Name</label>
           <input
             type="text"
             id="fname"
@@ -30,7 +30,7 @@
           />
           <p id="fname-error" class="error-message"></p>
         </div>
-
+<!-- 
         <div>
           <label for="lname">Last Name</label>
           <input
@@ -38,7 +38,7 @@
             id="lname"
             name="lname"
             placeholder="Enter your Last Name"
-          />
+          /> -->
           <p id="lname-error" class="error-message"></p>
         </div>
 
@@ -73,6 +73,11 @@
             placeholder="Confirm your Password"
           />
           <p id="cpassword-error" class="error-message"></p>
+        </div>
+
+        <div class="NID-attach">
+          <p>Please Attach your NID</p>
+          <input type="file" id="nid-file">
         </div>
 
         <div>
