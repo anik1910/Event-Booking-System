@@ -3,199 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background-color: #14171c;
-      color: white;
-      min-height: 100vh;
-    }
-
-    img {
-      vertical-align: middle;
-    }
-
-    #venue {
-      text-align: center;
-      margin-top: 50px;
-      color: #ffffff;
-       font-size: 30px;
-      margin: 20px 0;
-      font-weight: 600;
-    }
-    .veparking{
-      text-align: center;
-      font-size: 30px;
-      color: #ffffff;
-      margin: 20px 0;
-      font-weight: 600;
-    }
-
-    .icontainer {
-      position: relative;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .imySlides img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .cursor {
-      cursor: pointer;
-    }
-
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 40%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background-color: rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
-
-    .caption-container {
-      text-align: center;
-      background-color: #1e1e1e;
-      padding: 10px 16px;
-      color: white;
-      font-weight: 500;
-    }
-
-    .vrow:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .vcolumn {
-      float: left;
-      width: 16.66%;
-      padding: 4px;
-    }
-
-    .vdemo {
-      width: 100%;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 4px;
-      opacity: 0.6;
-      transition: opacity 0.3s;
-    }
-
-    .active,
-    .vdemo:hover {
-      opacity: 1;
-    }
-
-    .veheader-title {
-      font-size: 38px;
-      font-weight: bold;
-      color: #f5f6f5;
-      margin-left: 50px;
-    }
-
-    .veheader-btn input{
-      padding: 12px;
-      border-radius: 12px;
-      margin-left: 580px;
-      background-color: #b6e82e;
-      color: black;
-    }
-
-    .veheader {
-      display: flex;
-      flex-direction: row;
-      margin-left: 325px;
-      margin-top: 30px;
-    }
-
-    .vform {
-      background-color: #111418;
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    #vedetail table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    #vehead td {
-      font-weight: bold;
-      text-align: center;
-      color: #c7ff5e;
-      padding: 12px 10px;
-      font-size: 16px;
-    }
-
-    #vevalue td {
-      padding: 12px 10px;
-      text-align: center;
-      color: #e0e0e0;
-      font-size: 15px;
-    }
-
-    #vevalue td p {
-      margin: 0;
-    }
-    .details{
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #111418;
-      color: white;
-      font-size: 16px;
-      line-height: 1.7;
-      border-radius: 8px;
-    }
-    #vemapimg{
-      border-radius: 8px;
-      max-width: 1000px;
-      margin-left: 405px;
-    }
-  </style>
+  <link rel="stylesheet" href="../../asset/CSS/style.css" />
+  <script src="../../asset/Javascript/index.js"></script>
 </head>
 <body>
-    <div class="veheader">
+  <div class="veback-btn">
+      <input type="button" value=" Back ">
+  </div>
+  <br>
+  <div class="veheader">
     <div class="veheader-title">
       <span>Event Details</span>
     </div>
@@ -244,32 +60,32 @@ Organizer Booth & Help Desk: Located near the entrance, this booth will assist w
   <div class="icontainer">
     <div class="imySlides">
       <div class="numbertext">1 / 6</div>
-      <img src="../../image/vimage1.jpg" alt="">
+      <img src="../../asset/image/vimage1.jpg" alt="">
     </div>
 
     <div class="imySlides">
       <div class="numbertext">2 / 6</div>
-      <img src="../../image/vimage2.jpg" alt="">
+      <img src="../../asset/image/vimage2.jpg" alt="">
     </div>
 
     <div class="imySlides">
       <div class="numbertext">3 / 6</div>
-      <img src="../../image/vimage3.jpg" alt="">
+      <img src="../../asset/image/vimage3.jpg" alt="">
     </div>
 
     <div class="imySlides">
       <div class="numbertext">4 / 6</div>
-      <img src="../../image/vimage4.jpg" alt="">
+      <img src="../../asset/image/vimage4.jpg" alt="">
     </div>
 
     <div class="imySlides">
       <div class="numbertext">5 / 6</div>
-      <img src="../../image/vimage5.jpg" alt="">
+      <img src="../../asset/image/vimage5.jpg" alt="">
     </div>
 
     <div class="imySlides">
       <div class="numbertext">6 / 6</div>
-      <img src="../../image/vimage6.jpg" alt="">
+      <img src="../../asset/image/vimage6.jpg" alt="">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -280,46 +96,15 @@ Organizer Booth & Help Desk: Located near the entrance, this booth will assist w
     </div>
 
     <div class="vrow">
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage1.jpg" onclick="currentSlide(1)" alt=""></div>
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage2.jpg" onclick="currentSlide(2)" alt=""></div>
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage3.jpg" onclick="currentSlide(3)" alt=""></div>
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage4.jpg" onclick="currentSlide(4)" alt=""></div>
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage5.jpg" onclick="currentSlide(5)" alt=""></div>
-      <div class="vcolumn"><img class="vdemo demo cursor" src="../../image/vimage6.jpg" onclick="currentSlide(6)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage1.jpg" onclick="currentSlide(1)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage2.jpg" onclick="currentSlide(2)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage3.jpg" onclick="currentSlide(3)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage4.jpg" onclick="currentSlide(4)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage5.jpg" onclick="currentSlide(5)" alt=""></div>
+      <div class="vcolumn"><img class="vdemo demo cursor" src="../../asset/image/vimage6.jpg" onclick="currentSlide(6)" alt=""></div>
     </div>
   </div>
   <h3 class="veparking">Parking Map</h3>
-  <img id="vemapimg" src="../../image/demomap.png">
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("imySlides");
-      let dots = document.getElementsByClassName("vdemo");
-      let captionText = document.getElementById("vcaption");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
-  </script>
-
+  <img id="vemapimg" src="../../asset/image/demomap.png">
 </body>
 </html>

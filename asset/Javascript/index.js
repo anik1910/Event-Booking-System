@@ -188,26 +188,97 @@ function contactUsValidation() {
 }
 
 //Admin Page
-function openTab(evt, id) {
-  var i, content, link;
-  content = document.getElementsByClassName("content");
-  for (i = 0; i < content.length; i++) {
-    content[i].style.display = "none";
-  }
-  link = document.getElementsByClassName("link");
-  for (i = 0; i < link.length; i++) {
-    link[i].className = link[i].className.replace("active", "");
-  }
-  document.getElementById(id).style.display = "block";
-  evt.currentTarget.className += "active";
+function openTab(evt, tabId) {
+      var contents = document.getElementsByClassName("acontent");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+
+      var links = document.getElementsByClassName("link");
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+
+      document.getElementById(tabId).style.display = "block";
+      evt.currentTarget.classList.add("active");
 }
-//Profile Management
+//Refund Policy
+
+function openTab(tabName, elmnt, color) {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  for (var i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  var tablinks = document.getElementsByClassName("tablink");
+  for (var i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active-btn");
+    tablinks[i].classList.add("non-active-btn");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+
+  elmnt.parentElement.classList.remove("non-active-btn");
+  elmnt.parentElement.classList.add("active-btn");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("defaultOpen").click();
+});
+
+//OVERLAY-TEST
+
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const completePurchaseBtn = document.getElementById("completePurchaseBtn");
+  const overlay = document.getElementById("overlay");
+
+  completePurchaseBtn.addEventListener("click", function () {
+    overlay.style.display = "flex";
+  });
+});
+
+function closePopup() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+//venue details
+let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("imySlides");
+      let dots = document.getElementsByClassName("vdemo");
+      let captionText = document.getElementById("vcaption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+
+    //Profile Management
 function profilevalidation() {
-  var name = document.getElementById("fullName").value.trim();
-  var email = document.getElementById("email").value.trim();
-  var phone = document.getElementById("phone");
-  var address = document.getElementById("address");
-  var password = document.getElementById("password");
+  var name = document.getElementById("pmfullName").value.trim();
+  var email = document.getElementById("pmemail").value.trim();
+  var phone = document.getElementById("pmhone");
+  var address = document.getElementById("pmaddress");
+  var password = document.getElementById("pmpassword");
   var error = document.getElementById("error");
   var errorn = document.getElementById("errorn");
   var errore = document.getElementById("errore");
@@ -280,11 +351,11 @@ function profilevalidation() {
   updateProfile();
 }
 function updateProfile() {
-  var fullName = document.getElementById("fullName");
-  var email = document.getElementById("email");
-  var phone = document.getElementById("phone");
-  var address = document.getElementById("address");
-  var password = document.getElementById("password");
+  var fullName = document.getElementById("pmfullName");
+  var email = document.getElementById("pmemail");
+  var phone = document.getElementById("pmphone");
+  var address = document.getElementById("pmaddress");
+  var password = document.getElementById("pmpassword");
   var error = document.getElementById("error");
 
   if (fullName.value !== "") {
@@ -325,43 +396,125 @@ function changeImage(input) {
     );
   }
 }
+//ticket 
+<script>
+      let selectedSeats = [];
 
-//Refund Policy
+      function seatload(value) {
+        document.getElementById("seattype").innerText = value;
+        selectedSeats = [];
+        updateSeatAvailability();
+        updateSeatDisplay();
+        calculateTotal();
+      }
 
-function openTab(tabName, elmnt, color) {
-  var tabcontent = document.getElementsByClassName("tabcontent");
-  for (var i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+      function updateSeatAvailability() {
+        const allSeats = document.querySelectorAll("input[type='button']");
+        const currentType = document
+          .getElementById("seattype")
+          .innerText.toLowerCase();
 
-  var tablinks = document.getElementsByClassName("tablink");
-  for (var i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active-btn");
-    tablinks[i].classList.add("non-active-btn");
-  }
+        allSeats.forEach((seat) => {
+          seat.classList.remove("selected-seat");
+          seat.disabled = !seat.name.toLowerCase().includes(currentType);
+        });
+      }
 
-  document.getElementById(tabName).style.display = "block";
+      function selectSeat(button) {
+        const quantity =
+          parseInt(document.getElementById("ticketquantityInput").value) || 0;
+        const seatNum = button.value;
 
-  elmnt.parentElement.classList.remove("non-active-btn");
-  elmnt.parentElement.classList.add("active-btn");
-}
+        if (selectedSeats.includes(seatNum)) {
+          selectedSeats = selectedSeats.filter((s) => s !== seatNum);
+          button.classList.remove("selected-seat");
+        } else {
+          if (selectedSeats.length < quantity) {
+            selectedSeats.push(seatNum);
+            button.classList.add("selected-seat");
+          } else {
+            alert("You cannot select more seats than the ticket quantity.");
+          }
+        }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("defaultOpen").click();
-});
+        updateSeatDisplay();
+        calculateTotal();
+      }
 
-//OVERLAY-TEST
+      function updateSeatDisplay() {
+        document.getElementById("seatnumber").innerText =
+          selectedSeats.join(", ");
+      }
 
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-  const completePurchaseBtn = document.getElementById("completePurchaseBtn");
-  const overlay = document.getElementById("overlay");
+      function amenitiesload(value) {
+        document.getElementById("amenities").innerText = value;
+        calculateTotal();
+      }
 
-  completePurchaseBtn.addEventListener("click", function () {
-    overlay.style.display = "flex";
-  });
-});
+      function promoload(value) {
+        document.getElementById("promocode").innerText = value;
+        calculateTotal();
+      }
 
-function closePopup() {
-  document.getElementById("overlay").style.display = "none";
-}
+      function updateUpgrades() {
+        const checkboxes = document.querySelectorAll(".upgrade:checked");
+        let selectedUpgrades = Array.from(checkboxes)
+          .map((cb) => cb.value)
+          .join(", ");
+        document.getElementById("addupgrade").innerText = selectedUpgrades;
+        calculateTotal();
+      }
+
+      document
+        .getElementById("ticketquantityInput")
+        .addEventListener("input", function () {
+          document.getElementById("ticketquantityDisplay").innerText =
+            this.value;
+          selectedSeats = [];
+          updateSeatAvailability();
+          updateSeatDisplay();
+          calculateTotal();
+        });
+
+      function calculateTotal() {
+        let quantity = parseInt(
+          document.getElementById("ticketquantityInput").value
+        );
+        let seatType = document.getElementById("seattype").innerText;
+        let amenity = document.getElementById("amenities").innerText;
+        let amenityQuantity = parseInt(
+          document.getElementById("amenityQuantity").value
+        );
+        let upgrades = document.querySelectorAll(".upgrade:checked");
+        let total = 0;
+
+        if (seatType === "VIP") {
+          total += 1000 * quantity;
+        } else if (seatType === "Regular") {
+          total += 500 * quantity;
+        } else if (seatType === "Group") {
+          total += 1200;
+        }
+
+        let amenityquantity = document.getElementById("amenityQuantity");
+        let amenityText = amenity + ` (x${amenityQuantity})`;
+        document.getElementById("amenities").innerText = amenityText;
+
+        if (amenity === "Combo 1") total += 350 * amenityQuantity;
+        else if (amenity === "Combo 2") total += 450 * amenityQuantity;
+        else if (amenity === "Combo 3") total += 500 * amenityQuantity;
+        else if (amenity === "Surprise Combo") total += 600 * amenityQuantity;
+
+        upgrades.forEach((cb) => {
+          if (cb.value === "VIP Parking Pass") total += 1000;
+          else if (cb.value === "Meet & Greet Artists") total += 2500;
+          else if (cb.value === "Toilets") total += 100;
+        });
+
+        let promoCode = document.getElementById("promocode").innerText.trim();
+        if (promoCode === "DISCOUNT50") total -= 50;
+        if (total < 0) total = 0;
+
+        document.getElementById("totalprice").innerText = total + " Tk";
+      }
+    </script>

@@ -104,3 +104,9 @@ input[type="file"] {
   font-size: 14px;
 }
 
+.pmback-btn input{
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #b6e82e;
+  color: black;
+}

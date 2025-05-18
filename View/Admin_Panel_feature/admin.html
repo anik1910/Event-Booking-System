@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/CSS/astyle.css">
+  <link rel="stylesheet" href="../../asset/CSS/style.css" />
+  <script src="../../asset/Javascript/index.js"></script>
 </head>
 <body>
 
@@ -26,23 +27,5 @@
       <p>This is requests</p>
     </div>
   </div>
-
-  <script>
-    function openTab(evt, tabId) {
-      var contents = document.getElementsByClassName("acontent");
-      for (var i = 0; i < contents.length; i++) {
-        contents[i].style.display = "none";
-      }
-
-      var links = document.getElementsByClassName("link");
-      for (var i = 0; i < links.length; i++) {
-        links[i].classList.remove("active");
-      }
-
-      document.getElementById(tabId).style.display = "block";
-      evt.currentTarget.classList.add("active");
-    }
-  </script>
-
 </body>
 </html>
