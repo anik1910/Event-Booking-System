@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    if(isset($_SESSION['status'])||isset($_COOKIE['status'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -162,3 +166,9 @@
     </div>
   </body>
 </html>
+<?php
+    }else{
+        header('location: ../User_Authentication_feature/login.html');
+    }
+
+?>

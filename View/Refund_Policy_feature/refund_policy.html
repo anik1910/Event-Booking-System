@@ -1,337 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Refund Policy</title>
-      <link rel="stylesheet" href="../../asset/CSS/style.css"/>
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-         />
-      <script src="../../asset/Javascript/index.js"></script>
-   </head>
-   <body>
-      <!--Header-->
-      <header>
-         <nav>
-            <div class="nav-container">
-               <div class="nav-logo">
-                  <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
-               </div>
-               <ul class="nav-links">
-                  <li><a href="../Landing_Page_feature/landing_page.html">Home</a></li>
-                  <li><a href="../Landing_Page_feature/landing_page.html #cart-scroll">Event</a></li>
-                  <li><a href="refund_policy.html">Refund</a></li>
-                  <li><a href="../Landing_Page_feature/landing_page.html #news-blog">Blog</a></li>
-                  <li><a href="../Contact_Us_Form_feature/contact_us.html">Contact us</a></li>
-               </ul>
-               <div class="nav-btn">
-                  <button class="btn-get-started">Get Started</button>
-               </div>
-            </div>
-         </nav>
-      </header>
-      <section>
-         <div class="contact-title">
-            <h1>Refund <span>Policy</span></h1>
-         </div>
-      </section>
-      <!--Header-Buttons-->
-      <section>
-         <div class="refund-header-btn">
-            <div class="active-btn tablink">
-               <input type="button" value="Refund Terms" id="defaultOpen" onclick="openTab('RefundTerms', this)">
-            </div>
-            <div class="non-active-btn tablink">
-               <input type="button" value="Request Cancellation" onclick="openTab('RequestCancellation', this)" class="Request-Cancellation-active">
-            </div>
-            <div class="non-active-btn tablink">
-               <input type="button" value="Track Status" onclick="openTab('TrackStatus', this)" class="Track-Status_active">
-            </div>
-         </div>
-      </section>
-      <!-- Refund Terms Content -->
-      <div id="RefundTerms" class="tabcontent" style="display: block;">
-         <!-- Your existing refund-content section goes here -->
-         <section class="refund-content">
-            <!--Right Content-->
-            <div class="right-content">
-               <table class="deadline-table">
-                  <thead>
-                     <tr>
-                        <th>Product Category</th>
-                        <th>Full Refund</th>
-                        <th>Partial Refund</th>
-                        <th>No Refund</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>Digital Products</td>
-                        <td>Within 14 days of purchase</td>
-                        <td>15-30 days (50%)</td>
-                        <td>After 30 days</td>
-                     </tr>
-                     <tr>
-                        <td>Physical Goods</td>
-                        <td>Within 30 days, unused</td>
-                        <td>31-60 days (75%)</td>
-                        <td>After 60 days</td>
-                     </tr>
-                     <tr>
-                        <td>Subscription Services</td>
-                        <td>Within 7 days of billing</td>
-                        <td>8-14 days (prorated)</td>
-                        <td>After 14 days</td>
-                     </tr>
-                     <tr>
-                        <td>Event Tickets</td>
-                        <td>30+ days before event</td>
-                        <td>14-29 days (50%)</td>
-                        <td>Less than 14 days</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-            <!--Left Content-->
-            <div class="left-content">
-               <div>
-                  <h3>Refund Process</h3>
-                  <p>Once your refund request is approved, please note the following processing</p>
-                  <ul>
-                     <li><span>Credit Card Payments:</span> 3-5 business days</li>
-                     <li><span>Bank Transfers:</span> 5-7 business days</li>
-                     <li><span>Digital Wallets:</span> 1-2 business days</li>
-                  </ul>
-               </div>
-               <div>
-                  <h3>Exclusions</h3>
-                  <p>The following items are non-refundable:</p>
-                  <ul>
-                     <li>Customized or personalized products</li>
-                     <li>Gift cards and promotional codes</li>
-                     <li>Downloadable software that has been activated</li>
-                     <li>Services that have been fully rendered</li>
-                  </ul>
-               </div>
-            </div>
-            <div class="contatct-details">
-               <h3>Contact Information</h3>
-               <p>Tel : +1 (212) 555-1212</p>
-               <p>hello@domainsite.com</p>
-               <p>KLLG St, No.99, Pku City, ID 28289</p>
-            </div>
-         </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refund Policy</title>
+    <link rel="stylesheet" href="../../asset/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="../../asset/Javascript/index.js"></script>
+  </head>
+  <body>
+   
+    <!--Header-->
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html">Home</a>
+            </li>
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
+                >Event</a
+              >
+            </li>
+            <li><a href="refund_policy.html">Refund</a></li>
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html #news-blog"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a href="../Contact_Us_Form_feature/contact_us.html"
+                >Contact us</a
+              >
+            </li>
+          </ul>
+          <div class="nav-btn">
+            <button class="btn-get-started">Get Started</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="contact-title">
+        <h1>Refund <span>Policy</span></h1>
       </div>
-      <!-- Request Cancellation Content -->
-      <div id="RequestCancellation" class="tabcontent">
-         <div class="req-cancel-content">
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Order Number*</label>
-               </div>
-               <div class="text-field">
-                  <input type="text" placeholder="eg., ORD1234568">
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Purchase Date*</label>
-               </div>
-               <div class="text-field">
-                  <input type="date" placeholder="eg., ORD1234568">
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Product Category*</label>
-               </div>
-               <div class="text-field">
-                  <select name="" id="">
-                     <option value="">Select a Category</option>
-                     <option value="">Night Party</option>
-                     <option value="">Concert</option>
-                     <option value="">Club Party</option>
-                  </select>
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Full Name*</label>
-               </div>
-               <div class="text-field">
-                  <input type="text" placeholder="Your full name">
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Email Address*</label>
-               </div>
-               <div class="text-field">
-                  <input type="text" placeholder="Your email address">
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Reason for Cancellation*</label>
-               </div>
-               <div class="text-field">
-                  <select name="" id="">
-                     <option value="">Select a reason</option>
-                     <option value="">Changed my mind</option>
-                     <option value="">Received wrong item</option>
-                     <option value="">Club Party</option>
-                     <option value="">Other reason</option>
-                  </select>
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Additional Details</label>
-               </div>
-               <div class="text-field">
-                  <textarea name="" id="" placeholder="Please provide any additional information about your cancellation request"></textarea>
-               </div>
-            </div>
-            <div class="form-field">
-               <div class="text-label">
-                  <label>Preferred Refund Method*</label>
-               </div>
-               <div class="text-field">
-                  <select name="" id="">
-                     <option value="">Select refund method</option>
-                     <option value="">Bank transfer</option>
-                     <option value="">Card</option>
-                     <option value="">Bkash</option>
-                     <option value="">Nagad</option>
-                  </select>
-               </div>
-            </div>
-            <div class="req-cancel-btn">
-               <input type="button" value="Submit Cancellation Request">
-            </div>
-         </div>
+    </section>
+    <!--Header-Buttons-->
+    <section>
+      <div class="refund-header-btn">
+        <div class="active-btn tablink">
+          <input
+            type="button"
+            value="Refund Terms"
+          />
+        </div>
+        <div class="non-active-btn tablink">
+          <input
+            type="button"
+            value="Request Cancellation"
+            onclick="window.location.href='request_cancellation.html';"
+
+          />
+        </div>
+        <div class="non-active-btn tablink">
+          <input
+            type="button"
+            value="Track Status"
+            onclick="window.location.href='track_status.html';"
+          />
+        </div>
       </div>
-      <!-- Track Status Content -->
-      <div id="TrackStatus" class="tabcontent">
-         <section>
-            <div class="req-status-box">
-               <div class="form-field">
-                  <div class="text-label">
-                     <label>Check your Request Status</label>
-                  </div>
-                  <div class="text-field">
-                     <input type="text" class="order-id-check" placeholder="Enter your request ID or order number">
-                  </div>
-               </div>
-               <div class="req-status-btn">
-                  <input type="button" value="Track Status">
-               </div>
-            </div>
-         </section>
-         <section>
-            <div class="req-status-frame">
-               <div class="req-id-show">
-                  <p>Request ID: <span>REF-20250427-8642</span></p>
-               </div>
-               <div class="req-info">
-                  <p>Order Number: <span>ORD-87654321</span></p>
-                  <p>Submitted: <span>April 27, 2025</span></p>
-                  <p>Product: <span>Premium Subscription</span></p>
-                  <p>Current Status: <span class="req-status">In Progress</span></p>
-               </div>
-               <div class="status-timeline">
-                  <h3>Status Timeline</h3>
-                  <div class="status-timeline-view">
-                     <div class="status-icon">
-                        <i class="fa-solid fa-check" id="completed"></i>
-                     </div>
-                     <div class="status-info">
-                        <h5>Request Received</h5>
-                        <p>April 27, 2025 • 10:23 AM</p>
-                     </div>
-                  </div>
-                  <div class="status-timeline-view">
-                     <div class="status-icon">
-                        <i class="fa-solid fa-check" id="completed"></i>
-                     </div>
-                     <div class="status-info">
-                        <h5>Request Validated</h5>
-                        <p>April 28, 2025 • 9:15 AM</p>
-                     </div>
-                  </div>
-                  <div class="status-timeline-view">
-                     <div class="status-icon">
-                        <i class="fa-solid fa-clock-rotate-left" id="in-progress"></i>
-                     </div>
-                     <div class="status-info">
-                        <h5>Processing Refund</h5>
-                        <p>In progress</p>
-                     </div>
-                  </div>
-                  <div class="status-timeline-view">
-                     <div class="status-icon">
-                        <i class="fa-solid fa-xmark" id="pending"></i>
-                     </div>
-                     <div class="status-info">
-                        <h5>Refund Issued</h5>
-                        <p>Pending</p>
-                     </div>
-                  </div>
-                  <div class="status-timeline-view">
-                     <div class="status-icon">
-                        <i class="fa-solid fa-xmark" id="pending"></i>
-                     </div>
-                     <div class="status-info">
-                        <h5>Refund Complete</h5>
-                        <p>Pending</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="track-bottom-info">
-               <h3>Estimated Completion Time</h3>
-               <p>Your refund request is currently being processed. Based on your payment method, you can expect the refund to be completed within <b>3-5 business days</b> from now.</p>
-            </div>
-      </div>
+    </section>
+    <!-- Refund Terms Content -->
+      <section class="refund-content">
+        <!--Right Content-->
+        <div class="right-content">
+          <table class="deadline-table">
+            <thead>
+              <tr>
+                <th>Product Category</th>
+                <th>Full Refund</th>
+                <th>Partial Refund</th>
+                <th>No Refund</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Digital Products</td>
+                <td>Within 14 days of purchase</td>
+                <td>15-30 days (50%)</td>
+                <td>After 30 days</td>
+              </tr>
+              <tr>
+                <td>Physical Goods</td>
+                <td>Within 30 days, unused</td>
+                <td>31-60 days (75%)</td>
+                <td>After 60 days</td>
+              </tr>
+              <tr>
+                <td>Subscription Services</td>
+                <td>Within 7 days of billing</td>
+                <td>8-14 days (prorated)</td>
+                <td>After 14 days</td>
+              </tr>
+              <tr>
+                <td>Event Tickets</td>
+                <td>30+ days before event</td>
+                <td>14-29 days (50%)</td>
+                <td>Less than 14 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Left Content-->
+        <div class="left-content">
+          <div>
+            <h3>Refund Process</h3>
+            <p>
+              Once your refund request is approved, please note the following
+              processing
+            </p>
+            <ul>
+              <li><span>Credit Card Payments:</span> 3-5 business days</li>
+              <li><span>Bank Transfers:</span> 5-7 business days</li>
+              <li><span>Digital Wallets:</span> 1-2 business days</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Exclusions</h3>
+            <p>The following items are non-refundable:</p>
+            <ul>
+              <li>Customized or personalized products</li>
+              <li>Gift cards and promotional codes</li>
+              <li>Downloadable software that has been activated</li>
+              <li>Services that have been fully rendered</li>
+            </ul>
+          </div>
+        </div>
+        <div class="contatct-details">
+          <h3>Contact Information</h3>
+          <p>Tel : +1 (212) 555-1212</p>
+          <p>hello@domainsite.com</p>
+          <p>KLLG St, No.99, Pku City, ID 28289</p>
+        </div>
       </section>
-      <!-- Footer Section -->
-      <footer>
-         <div class="footer-container">
-            <div class="footer-left">
-               <span>Follow Us</span>
-               <div class="social-icon">
-                  <a href="https://www.facebook.com" target="_blank"
-                     ><i class="fab fa-facebook-f"></i
-                     ></a>
-                  <a href="https://www.github.com" target="_blank"
-                     ><i class="fab fa-github"></i
-                     ></a>
-                  <a href="https://www.youtube.com" target="_blank"
-                     ><i class="fab fa-youtube"></i
-                     ></a>
-                  <a href="https://www.instagram.com" target="_blank"
-                     ><i class="fab fa-instagram"></i
-                     ></a>
-               </div>
-               <div class="footer-brand-title">
-                  <p>EvenBoo</p>
-               </div>
-            </div>
-            <div class="footer-right">
-               <div class="footer-nav-items">
-                  <a href="../Landing_Page_feature/landing_page.html">Home</a>
-                  <a href="../Landing_Page_feature/landing_page.html #cart-scroll">Event</a>
-                  <a href="refund_policy.html">Refund</a>
-                  <a href="../Landing_Page_feature/landing_page.html #news-blog">Blog</a>
-                  <a href="../Contact_Us_Form_feature/contact_us.html">Contact Us</a>
-               </div>
-               <div class="footer-copyright">
-                  <p>© 2025 evenboo. All rights reserved.</p>
-               </div>
-            </div>
-         </div>
-      </footer>
-   </body>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <span>Follow Us</span>
+          <div class="social-icon">
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.github.com" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <div class="footer-brand-title">
+            <p>EvenBoo</p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-nav-items">
+            <a href="../Landing_Page_feature/landing_page.html">Home</a>
+            <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
+              >Event</a
+            >
+            <a href="refund_policy.html">Refund</a>
+            <a href="../Landing_Page_feature/landing_page.html #news-blog"
+              >Blog</a
+            >
+            <a href="../Contact_Us_Form_feature/contact_us.html">Contact Us</a>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2025 evenboo. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

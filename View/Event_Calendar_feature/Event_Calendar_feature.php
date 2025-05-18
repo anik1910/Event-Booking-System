@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if(isset($_SESSION['status'])||isset($_COOKIE['status'])){
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +35,7 @@
             <div class="nav-icon">
               <a href="#"><i class="fa-solid fa-bell"></i></a>
               <a href="#"><i class="fa-solid fa-gear"></i></a>
-              <a href="../Landing_Page_feature/landing_page.html"
+              <a href="../../controller/logout.php"
                 ><i class="fa-solid fa-right-from-bracket"></i
               ></a>
             </div>
@@ -218,3 +223,9 @@
     </section>
   </body>
 </html>
+<?php
+    }else{
+        header('location: ../User_Authentication_feature/login.html');
+    }
+
+?>

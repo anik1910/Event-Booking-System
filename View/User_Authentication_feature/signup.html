@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
     <link rel="stylesheet" href="../../asset/CSS/style.css" />
-    <script src="../../asset/Javascript/index.js"></script>
+    <!-- <script src="../../asset/Javascript/index.js"></script> -->
   </head>
   <body>
+    <form  onsubmit="return signupValidation();">
     <div class="signup-container">
       <div class="signup-title">
         <p>Register</p>
@@ -77,19 +78,22 @@
 
         <div class="NID-attach">
           <p>Please Attach your NID</p>
-          <input type="file" id="nid-file">
+          <input type="file" id="nid-file" accept=".jpg, .jpeg, .png" />
+          <p id="nid-error" class="error-message"></p>
         </div>
 
         <div>
           <input
-            type="button"
+            type="submit"
             name="sign-btn"
             id="signup-btn"
             value="Sign Up"
-            onclick="signupValidation()"
+            
           />
         </div>
       </div>
     </div>
+    </form>
+     <script src="../../asset/Javascript/index.js"></script>
   </body>
 </html>

@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Refund Policy</title>
-    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="../../asset/CSS/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <script src="/Javascript/index.js"></script>
+    <script src="../../asset/Javascript/index.js"></script>
   </head>
   <body>
     <!--Header-->
@@ -17,14 +17,14 @@
       <nav>
         <div class="nav-container">
           <div class="nav-logo">
-            <a href="#">EvenBoo</a>
+            <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
           </div>
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Event</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="../Landing_Page_feature/landing_page.html">Home</a></li>
+            <li><a href="../Landing_Page_feature/landing_page.html #cart-scroll">Event</a></li>
+            <li><a href="refund_policy.html">Refund</a></li>
+            <li><a href="../Landing_Page_feature/landing_page.html #news-blog">Blog</a></li>
+            <li><a href="../Contact_Us_Form_feature/contact_us.html">Contact us</a></li>
           </ul>
           <div class="nav-btn">
             <button class="btn-get-started">Get Started</button>
@@ -44,7 +44,7 @@
         <div class="refund-header-btn">
 
             <div class="non-active-btn">
-                <input type="button" value="Refund Terms">
+                <input type="button" value="Refund Terms" onclick="window.location.href='refund_policy.html';">
             </div>
 
             <div class="active-btn">
@@ -52,109 +52,119 @@
             </div>
             
             <div class="non-active-btn">
-            <input type="button" value="Track Status" class="Track-Status_active">
+            <input type="button" value="Track Status" class="Track-Status_active" onclick="window.location.href='track_status.html';">
             </div>
 
         </div>
     </section>
 
     <!--Request Cancellation Content -->
-    <div class="req-cancel-content">
+  <form onsubmit="return requestCancelValidation();">
+  <div class="req-cancel-content">
 
-        <div class="form-field">
-            <div class="text-label">
-                <label>Order Number*</label>
-            </div>
-            <div class="text-field">
-                <input type="text" placeholder="eg., ORD1234568">
-            </div>
-        </div>
-
-        <div class="form-field">
-            <div class="text-label">
-                <label>Purchase Date*</label>
-            </div>
-            <div class="text-field">
-                <input type="date" placeholder="eg., ORD1234568">
-            </div>
-        </div>
-
-        <div class="form-field">
-            <div class="text-label">
-                <label>Product Category*</label>
-            </div>
-            <div class="text-field">
-                <select name="" id="">
-                  <option value="">Select a Category</option>
-                  <option value="">Night Party</option>
-                  <option value="">Concert</option>
-                  <option value="">Club Party</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-field">
-            <div class="text-label">
-                <label>Full Name*</label>
-            </div>
-            <div class="text-field">
-                <input type="text" placeholder="Your full name">
-            </div>
-        </div>
-
-        <div class="form-field">
-          <div class="text-label">
-              <label>Email Address*</label>
-          </div>
-          <div class="text-field">
-              <input type="text" placeholder="Your email address">
-          </div>
+    <div class="form-field">
+      <div class="text-label">
+        <label>Order Number*</label>
       </div>
-
-      <div class="form-field">
-        <div class="text-label">
-            <label>Reason for Cancellation*</label>
-        </div>
-        <div class="text-field">
-            <select name="" id="">
-              <option value="">Select a reason</option>
-              <option value="">Changed my mind</option>
-              <option value="">Received wrong item</option>
-              <option value="">Club Party</option>
-              <option value="">Other reason</option>
-            </select>
-        </div>
+      <div class="text-field">
+        <input type="text" id="order-number" placeholder="eg., ORD1234568">
+        <span id="order-error" class="error-message"></span>
       </div>
-
-      <div class="form-field">
-        <div class="text-label">
-          <label>Additional Details</label>
-        </div>
-        <div class="text-field">
-          <textarea name="" id="" placeholder="Please provide any additional information about your cancellation request"></textarea>
-        </div>
-      </div>
-
-  <div class="form-field">
-    <div class="text-label">
-        <label>Preferred Refund Method*</label>
     </div>
-    <div class="text-field">
-        <select name="" id="">
-          <option value="">Select refund method</option>
-          <option value="">Bank transfer</option>
-          <option value="">Card</option>
-          <option value="">Bkash</option>
-          <option value="">Nagad</option>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Purchase Date*</label>
+      </div>
+      <div class="text-field">
+        <input type="date" id="purchase-date">
+        <span id="date-error" class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Product Category*</label>
+      </div>
+      <div class="text-field">
+        <select id="product-category">
+          <option>Select a category</option>
+          <option>Night Party</option>
+          <option>Concert</option>
+          <option>Club Party</option>
         </select>
+        <span id="category-error" class="error-message"></span>
+      </div>
     </div>
-  </div>
 
-  <div class="req-cancel-btn">
-    <input type="button" value="Submit Cancellation Request">
+    <div class="form-field">
+      <div class="text-label">
+        <label>Full Name*</label>
+      </div>
+      <div class="text-field">
+        <input type="text" id="full-name" placeholder="Your full name">
+        <span id="name-error" class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Email Address*</label>
+      </div>
+      <div class="text-field">
+        <input type="text" id="Email" placeholder="Your email address">
+        <span id="email-error" class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Reason for Cancellation*</label>
+      </div>
+      <div class="text-field">
+        <select id="cancel-reason">
+          <option>Select a reason</option>
+          <option>Changed my mind</option>
+          <option>Received wrong item</option>
+          <option>Club Party</option>
+          <option>Other reason</option>
+        </select>
+        <span id="reason-error" class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Additional Details</label>
+      </div>
+      <div class="text-field">
+        <textarea placeholder="Please provide any additional information about your cancellation request"></textarea>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="text-label">
+        <label>Preferred Refund Method*</label>
+      </div>
+      <div class="text-field">
+        <select id="refund-method">
+          <option>Select a refund method</option>
+          <option>Bank transfer</option>
+          <option>Card</option>
+          <option>Bkash</option>
+          <option>Nagad</option>
+        </select>
+        <span id="method-error" class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="req-cancel-btn">
+      <input type="submit" value="Submit Cancellation Request">
+    </div>
+
   </div>
-  
-</div>
+</form>
+
 
 
     <!-- Footer Section -->
