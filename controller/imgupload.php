@@ -4,7 +4,7 @@ $ext = explode('.', $_FILES['myfile']['name']);
 $des = '../asset/userimage/' . 'userimage.' . $ext[1];
 
 if (move_uploaded_file($src, $des)) {
-    header('location:../View/Profile_Management_feature/profilemanagement.html');
+    // header('location:../View/Profile_Management_feature/profilemanagement.html');
 } else {
     echo "Error";
 }

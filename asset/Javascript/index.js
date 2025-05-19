@@ -273,10 +273,6 @@ let slideIndex = 1;
     }
 
   //Profile Management
-
-    function pmback(){
-      header('location: ../../View/User_Authentication_feature/login.html');
-    }
     
   function profilevalidation() {
     var name = document.getElementById("pmfullName").value.trim();
@@ -416,31 +412,30 @@ let slideIndex = 1;
   function updateSeatAvailability() {
     const allSeats = document.querySelectorAll("input[type='button']");
     const currentType = document.getElementById("seattype").innerText.toLowerCase();
-    allSeats.forEach((seat) => {
-      seat.classList.remove("selected-seat");
+    allSeats.forEach((seat) => {seat.classList.remove("selected-seat");
       seat.disabled = !seat.name.toLowerCase().includes(currentType);});
   }
 
-        function selectSeat(button) {
-          const quantity =
-            parseInt(document.getElementById("ticketquantityInput").value) || 0;
-          const seatNum = button.value;
+  function selectSeat(button) {
+    const quantity =parseInt(document.getElementById("ticketquantityInput").value) || 0;
+    const seatNum = button.value;
 
-          if (selectedSeats.includes(seatNum)) {
-            selectedSeats = selectedSeats.filter((s) => s !== seatNum);
-            button.classList.remove("selected-seat");
-          } else {
-            if (selectedSeats.length < quantity) {
-              selectedSeats.push(seatNum);
-              button.classList.add("selected-seat");
-            } else {
-              alert("You cannot select more seats than the ticket quantity.");
-            }
-          }
+    if (selectedSeats.includes(seatNum)) {
+      selectedSeats = selectedSeats.filter((s) => s !== seatNum);
+      button.classList.remove("selected-seat");
+    } 
+    else {
+      if (selectedSeats.length < quantity) {
+        selectedSeats.push(seatNum);
+        button.classList.add("selected-seat");
+      }
+      else {
+        alert("You cannot select more seats than the ticket quantity.");
+      }
+    }
 
-          updateSeatDisplay();
-          calculateTotal();
-        }
+    updateSeatDisplay();
+  }
 
         function updateSeatDisplay() {
           document.getElementById("seatnumber").innerText =
@@ -466,11 +461,8 @@ let slideIndex = 1;
           calculateTotal();
         }
 
-        document
-          .getElementById("ticketquantityInput")
-          .addEventListener("input", function () {
-            document.getElementById("ticketquantityDisplay").innerText =
-              this.value;
+        document.getElementById("ticketquantityInput").addEventListener("input", function () {
+            document.getElementById("ticketquantityDisplay").innerText =this.value;
             selectedSeats = [];
             updateSeatAvailability();
             updateSeatDisplay();
@@ -478,9 +470,7 @@ let slideIndex = 1;
           });
 
         function calculateTotal() {
-          let quantity = parseInt(
-            document.getElementById("ticketquantityInput").value
-          );
+          let quantity = parseInt(document.getElementById("ticketquantityInput").value);
           let seatType = document.getElementById("seattype").innerText;
           let amenity = document.getElementById("amenities").innerText;
           let amenityQuantity = parseInt(
@@ -501,10 +491,14 @@ let slideIndex = 1;
           let amenityText = amenity + ` (x${amenityQuantity})`;
           document.getElementById("amenities").innerText = amenityText;
 
-          if (amenity === "Combo 1") total += 350 * amenityQuantity;
-          else if (amenity === "Combo 2") total += 450 * amenityQuantity;
-          else if (amenity === "Combo 3") total += 500 * amenityQuantity;
-          else if (amenity === "Surprise Combo") total += 600 * amenityQuantity;
+          if (amenity === "Combo 1") {
+            total += 350 * amenityQuantity;}
+          else if (amenity === "Combo 2") {
+            total += 450 * amenityQuantity;}
+          else if (amenity === "Combo 3") {
+            total += 500 * amenityQuantity;}
+          else if (amenity === "Surprise Combo") {
+            total += 600 * amenityQuantity;}
 
           upgrades.forEach((cb) => {
             if (cb.value === "VIP Parking Pass") total += 1000;

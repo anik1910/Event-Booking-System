@@ -4,7 +4,8 @@
     <script src="../../asset/Javascript/index.js"></script>
 </head>
 <body>
-  <form method="post" action="../../controller/imgupload.php" enctype="multipart/form-data">
+  <form >
+  <!-- method="post" action="../../controller/imgupload.php" enctype="multipart/form-data"> -->
     <div class="profile-container">
       <img id="preview" src="../../asset/image/udi.png" alt="Profile" class="profile-pic">
       <br>
@@ -40,7 +41,7 @@
       <p id="error"></p>
     </div>
     <div>
-      <input id ="pmsubmit" type="submit" value="Submit" onclick="profilevalidation()">
+      <input id ="pmsubmit" type="button" value="Submit" onclick="profilevalidation()">
     </div>
   </form>
 </body>
