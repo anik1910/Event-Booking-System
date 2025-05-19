@@ -9,6 +9,10 @@ if (isset($_REQUEST['submit'])) {
         header("Location: ../View/User_Authentication_feature/login.html");
         exit();
     }
+    if ($email === "admin@gmail.com" || $password === "admin") {
+        header("Location: ../View/Admin_Panel_feature/admin.html");
+        exit();
+    }
 
     if ($email === $password) {
         $_SESSION['status'] = true;
