@@ -136,8 +136,6 @@ function signupValidation() {
     passwordError.innerHTML = "";
     cpasswordError.innerHTML = "";
     nidError.innerHTML = "";
-
-    return true;
   }
 
   return false;

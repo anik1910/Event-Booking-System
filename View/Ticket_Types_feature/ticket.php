@@ -15,9 +15,6 @@
 </head>
 
 <body>
-  <div class="tback-btn">
-    <input type="button" value="  Back  ">
-  </div>
   <h1 id="ticketh">Ticket</h1>
 
   <div class="seattype">
