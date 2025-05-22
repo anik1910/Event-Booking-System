@@ -1,9 +1,7 @@
 <?php
-//require_once('db.php');
+require_once('../model/db.php');
 session_start();
-//$con = getConnection();
-$con = mysqli_connect('127.0.0.1', 'root', '', 'evenboodb');
-
+$con = getConnection();
 if(isset($_REQUEST['submit']))
 {
     $fname = trim($_REQUEST['fname']); 
