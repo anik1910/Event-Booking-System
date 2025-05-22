@@ -122,23 +122,7 @@ function signupValidation() {
     }
   }
 
-  if (valid) {
-    alert("Signup Successful");
-
-    fnameField.value = "";
-    emailField.value = "";
-    passwordField.value = "";
-    cpasswordField.value = "";
-    nidField.value = "";
-
-    fnameError.innerHTML = "";
-    emailError.innerHTML = "";
-    passwordError.innerHTML = "";
-    cpasswordError.innerHTML = "";
-    nidError.innerHTML = "";
-  }
-
-  return false;
+  return valid;
 }
 
 // Contact Us Form Validation

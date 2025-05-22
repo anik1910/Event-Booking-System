@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,10 +9,10 @@
   </head>
   <body>
     <form
-      action="../../model/reg.php"
+      action="../../controller/reg_store.php"
       method="post"
       enctype="multipart/form-data"
-      onsubmit="return signupValidation();"
+      onsubmit="return signupValidation()"
     >
       <div class="signup-container">
         <div class="signup-title">
@@ -55,7 +56,15 @@
               name="email"
               placeholder="Enter your Email"
             />
-            <p id="email-error" class="error-message"></p>
+            <p id="email-error" class="error-message">
+              <?php
+              if (isset($_SESSION['email_error']))
+              {
+                echo $_SESSION['email_error'];
+                unset($_SESSION['email_error']);
+              }
+              ?>
+            </p>
           </div>
 
           <div>
