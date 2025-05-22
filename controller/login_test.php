@@ -1,35 +1,27 @@
 <?php
 session_start();
 
-if (isset($_REQUEST['submit'])) {
+require_once('../model/loginModel.php');
+
+if(isset($_REQUEST['submit']))
+{
+
     $email = trim($_REQUEST['email']);
-    $password = trim($_REQUEST['password']);
+    $password = trim($_REQUEST['password']); 
 
-    if ($email === "" || $password === "") {
-        header("Location: ../View/User_Authentication_feature/login.html");
-        exit();
-    }
-    if ($email === "admin@gmail.com" || $password === "admin") {
-        header("Location: ../View/Admin_Panel_feature/admin.html");
-        exit();
-    }
-
-    if ($email === $password) {
+    $user = ['email'=>$email,'password'=>$password];
+    $status =login($user);
+    if($status)
+    {
         $_SESSION['status'] = true;
-
-        if (isset($_REQUEST['remember'])) {
-
+        
+        if(isset($_REQUEST['remember']))
+        {
             setcookie('status', 'true', time() + 5000, '/');
         }
-
         header('Location: ../View/Event_Calendar_feature/Event_Calendar_feature.php');
         exit();
-    } else {
-
-        header("Location: ../View/User_Authentication_feature/login.html");
-        exit();
     }
-} else {
-    // echo "Invalid request. Please submit the form first.";
 }
+
 ?>
