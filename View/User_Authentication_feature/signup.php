@@ -91,7 +91,7 @@
 
           <div class="NID-attach">
             <p>Please Attach your NID</p>
-            <input type="file" id="nid-file" accept=".jpg, .jpeg, .png" />
+            <input type="file" id="nid-file" name="nid_file" accept=".jpg, .jpeg, .png" />
             <p id="nid-error" class="error-message"></p>
           </div>
 
