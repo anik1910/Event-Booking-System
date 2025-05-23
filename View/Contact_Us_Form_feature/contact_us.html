@@ -12,90 +12,108 @@
     <script src="../../asset/Javascript/index.js"></script>
   </head>
   <body>
-    <form onsubmit="return contactUsValidation();">
-      <!--Header-->
-      <header>
-        <nav>
-          <div class="nav-container">
-            <div class="nav-logo">
-              <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
-            </div>
-            <ul class="nav-links">
-              <li>
-                <a href="../Landing_Page_feature/landing_page.html">Home</a>
-              </li>
-              <li>
-                <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
-                  >Event</a
-                >
-              </li>
-              <li>
-                <a href="../Refund_Policy_feature/refund_policy.html">Refund</a>
-              </li>
-              <li>
-                <a href="../Landing_Page_feature/landing_page.html #news-blog"
-                  >Blog</a
-                >
-              </li>
-              <li><a href="contact_us.html">Contact us</a></li>
-            </ul>
-            <div class="nav-btn">
+    <!--Header-->
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html">Home</a>
+            </li>
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
+                >Event</a
+              >
+            </li>
+            <li>
+              <a href="../Refund_Policy_feature/refund_policy.html">Refund</a>
+            </li>
+            <li>
+              <a href="../Landing_Page_feature/landing_page.html #news-blog"
+                >Blog</a
+              >
+            </li>
+            <li><a href="contact_us.html">Contact us</a></li>
+          </ul>
+          <div class="nav-btn">
+            <a href="../User_Authentication_feature/login.html">
               <button class="btn-get-started">Get Started</button>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Form Section-->
+    <section>
+      <div class="contact-container">
+        <div class="contact-title">
+          <h1>Contact <span>Us</span></h1>
+        </div>
+
+        <!--left-content-->
+        <div class="contact-field-container">
+          <div class="contact-left-content">
+            <div>
+              <h3>Get in Touch with Us Today</h3>
+              <p id="p-class">
+                Have questions? Contact Rofaria today for expert assistance with
+                all your real estate needs. We're here to help!
+              </p>
             </div>
-          </div>
-        </nav>
-      </header>
-
-      <!--Form Section-->
-      <section>
-        <div class="contact-container">
-          <div class="contact-title">
-            <h1>Contact <span>Us</span></h1>
-          </div>
-
-          <!--left-content-->
-          <div class="contact-field-container">
-            <div class="contact-left-content">
-              <div>
-                <h3>Get in Touch with Us Today</h3>
-                <p id="p-class">
-                  Have questions? Contact Rofaria today for expert assistance
-                  with all your real estate needs. We're here to help!
-                </p>
-              </div>
-              <div class="contatc-details">
-                <p>Tel : +1 (212) 555-1212</p>
-                <p>hello@domainsite.com</p>
-                <p>KLLG St, No.99, Pku City, ID 28289</p>
-              </div>
-
-              <div class="left-social-icon">
-                <a href="https://www.facebook.com" target="_blank"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a href="https://www.github.com" target="_blank"
-                  ><i class="fab fa-github"></i
-                ></a>
-                <a href="https://www.instagram.com" target="_blank"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
+            <div class="contatc-details">
+              <p>Tel : +1 (212) 555-1212</p>
+              <p>hello@domainsite.com</p>
+              <p>KLLG St, No.99, Pku City, ID 28289</p>
             </div>
 
-            <!-- right-content -->
+            <div class="left-social-icon">
+              <a href="https://www.facebook.com" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.github.com" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
 
-            <div class="contact-right-content">
+          <!-- right-content -->
+
+          <div class="contact-right-content">
+            <form
+              action="../../controller/contactUs_store.php"
+              method="post"
+              enctype="multipart/form-data"
+              onsubmit="return contactUsValidation();"
+            >
               <label for="name">Your Name</label>
-              <input type="text" id="cname" placeholder="Enter your Name" />
+              <input
+                type="text"
+                id="cname"
+                placeholder="Enter your Name"
+                name="cname"
+              />
               <p id="name-error" class="error-message"></p>
 
               <label for="email">Your Email</label>
-              <input type="email" id="cemail" placeholder="Enter your Email" />
+              <input
+                type="email"
+                id="cemail"
+                placeholder="Enter your Email"
+                name="cemail"
+              />
               <p id="email-error" class="error-message"></p>
 
               <label for="message">Your Message</label>
               <textarea
                 id="cmessage"
+                name="cmessage"
                 rows="5"
                 placeholder="Write your message here"
               ></textarea>
@@ -104,61 +122,62 @@
               <div class="send-btn">
                 <input
                   type="submit"
+                  name="submit"
                   id="send-message-btn"
                   value="Send Message"
                 />
               </div>
-            </div>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Footer Section -->
+    <!-- Footer Section -->
 
-      <footer>
-        <div class="footer-container">
-          <div class="footer-left">
-            <span>Follow Us</span>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <span>Follow Us</span>
 
-            <div class="social-icon">
-              <a href="https://www.facebook.com" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.github.com" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a href="https://www.youtube.com" target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a href="https://www.instagram.com" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
-
-            <div class="footer-brand-title">
-              <p>EvenBoo</p>
-            </div>
+          <div class="social-icon">
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.github.com" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
 
-          <div class="footer-right">
-            <div class="footer-nav-items">
-              <a href="../Landing_Page_feature/landing_page.html">Home</a>
-              <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
-                >Event</a
-              >
-              <a href="../Refund_Policy_feature/refund_policy.html">Refund</a>
-              <a href="../Landing_Page_feature/landing_page.html #news-blog"
-                >Blog</a
-              >
-              <a href="contact_us.html">Contact Us</a>
-            </div>
-
-            <div class="footer-copyright">
-              <p>© 2025 evenboo. All rights reserved.</p>
-            </div>
+          <div class="footer-brand-title">
+            <p>EvenBoo</p>
           </div>
         </div>
-      </footer>
-    </form>
+
+        <div class="footer-right">
+          <div class="footer-nav-items">
+            <a href="../Landing_Page_feature/landing_page.html">Home</a>
+            <a href="../Landing_Page_feature/landing_page.html #cart-scroll"
+              >Event</a
+            >
+            <a href="../Refund_Policy_feature/refund_policy.html">Refund</a>
+            <a href="../Landing_Page_feature/landing_page.html #news-blog"
+              >Blog</a
+            >
+            <a href="contact_us.html">Contact Us</a>
+          </div>
+
+          <div class="footer-copyright">
+            <p>© 2025 evenboo. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

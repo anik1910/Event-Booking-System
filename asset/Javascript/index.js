@@ -121,7 +121,7 @@ function signupValidation() {
       valid = false;
     }
   }
-
+  alert("Message Sent Successfully!");
   return valid;
 }
 
@@ -176,17 +176,9 @@ function contactUsValidation() {
 
   if (valid) {
     alert("Message Sent Successfully!");
-
-    nameField.value = "";
-    emailField.value = "";
-    messageField.value = "";
-
-    nameError.innerHTML = "";
-    emailError.innerHTML = "";
-    messageError.innerHTML = "";
   }
 
-  return false;
+  return valid;
 }
 
 //Admin Page
