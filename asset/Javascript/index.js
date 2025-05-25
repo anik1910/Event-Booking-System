@@ -312,20 +312,8 @@ function requestCancelValidation() {
   } else {
     methodError.innerHTML = "";
   }
-
-  if (valid) {
-    alert("Cancellation request submitted successfully!");
-
-    orderField.value = "";
-    dateField.value = "";
-    categoryField.selectedIndex = 0;
-    nameField.value = "";
-    emailField.value = "";
-    reasonField.selectedIndex = 0;
-    methodField.selectedIndex = 0;
-  }
-
-  return false;
+  alert("Cancellation request submitted successfully!");
+  return valid;
 }
 
 //Track-status Validation

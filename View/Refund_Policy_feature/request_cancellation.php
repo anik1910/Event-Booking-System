@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,16 +60,27 @@
     </section>
 
     <!--Request Cancellation Content -->
-  <form onsubmit="return requestCancelValidation();">
-  <div class="req-cancel-content">
+  <form action="../../controller/req_cancel_store.php"
+      method="post"
+      enctype="multipart/form-data" 
+      onsubmit="return requestCancelValidation();">
 
+  <div class="req-cancel-content">
     <div class="form-field">
       <div class="text-label">
         <label>Order Number*</label>
       </div>
       <div class="text-field">
-        <input type="text" id="order-number" placeholder="eg., ORD1234568">
-        <span id="order-error" class="error-message"></span>
+        <input type="text" id="order-number" name="order_number" placeholder="eg., ORD1234568">
+        <span id="order-error" class="error-message">
+          <?php
+              if (isset($_SESSION['email_error']))
+              {
+                echo $_SESSION['email_error'];
+                unset($_SESSION['email_error']);
+              }
+              ?>
+        </span>
       </div>
     </div>
 
@@ -77,7 +89,7 @@
         <label>Purchase Date*</label>
       </div>
       <div class="text-field">
-        <input type="date" id="purchase-date">
+        <input type="date" id="purchase-date" name="purchase_date">
         <span id="date-error" class="error-message"></span>
       </div>
     </div>
@@ -87,7 +99,7 @@
         <label>Product Category*</label>
       </div>
       <div class="text-field">
-        <select id="product-category">
+        <select id="product-category" name="product_category">
           <option>Select a category</option>
           <option>Night Party</option>
           <option>Concert</option>
@@ -102,7 +114,7 @@
         <label>Full Name*</label>
       </div>
       <div class="text-field">
-        <input type="text" id="full-name" placeholder="Your full name">
+        <input type="text" id="full-name" name="full_name" placeholder="Your full name">
         <span id="name-error" class="error-message"></span>
       </div>
     </div>
@@ -112,7 +124,7 @@
         <label>Email Address*</label>
       </div>
       <div class="text-field">
-        <input type="text" id="Email" placeholder="Your email address">
+        <input type="text" id="Email" name="Email" placeholder="Your email address">
         <span id="email-error" class="error-message"></span>
       </div>
     </div>
@@ -122,7 +134,7 @@
         <label>Reason for Cancellation*</label>
       </div>
       <div class="text-field">
-        <select id="cancel-reason">
+        <select id="cancel-reason" name="cancel_reason">
           <option>Select a reason</option>
           <option>Changed my mind</option>
           <option>Received wrong item</option>
@@ -138,7 +150,7 @@
         <label>Additional Details</label>
       </div>
       <div class="text-field">
-        <textarea placeholder="Please provide any additional information about your cancellation request"></textarea>
+        <textarea placeholder="Please provide any additional information about your cancellation request" name="add_text"></textarea>
       </div>
     </div>
 
@@ -147,7 +159,7 @@
         <label>Preferred Refund Method*</label>
       </div>
       <div class="text-field">
-        <select id="refund-method">
+        <select id="refund-method" name="refund_method">
           <option>Select a refund method</option>
           <option>Bank transfer</option>
           <option>Card</option>
@@ -159,7 +171,7 @@
     </div>
 
     <div class="req-cancel-btn">
-      <input type="submit" value="Submit Cancellation Request">
+      <input type="submit" name="submit" value="Submit Cancellation Request">
     </div>
 
   </div>
