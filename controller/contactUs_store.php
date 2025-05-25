@@ -1,16 +1,31 @@
 <?php
 require_once('../model/db.php');
+header('Content-Type: application/json');
+
 session_start();
 $con = getConnection();
-if(isset($_REQUEST['submit']))
-{
-    $cname = trim($_REQUEST['cname']); 
-    $cemail = trim($_REQUEST['cemail']);
-    $cmessage = trim($_REQUEST['cmessage']); 
 
-    $sql = "insert into contact_us(cname, cemail, cmessage) values('{$cname}', '{$cemail}', '{$cmessage}')";
-    mysqli_query($con, $sql);
+// Get raw JSON from POST
+if (isset($_POST['json'])) {
+    $data = json_decode($_POST['json'], true);
 
-    header('location: ../View/Contact_Us_Form_feature/contact_us.html');
+    $cname = trim($data['cname'] ?? '');
+    $cemail = trim($data['cemail'] ?? '');
+    $cmessage = trim($data['cmessage'] ?? '');
+
+    if ($cname === '' || $cemail === '' || $cmessage === '') {
+        echo json_encode(["status" => "error", "message" => "All fields are required."]);
+        exit;
+    }
+
+    // Insert into DB
+    $sql = "INSERT INTO contact_us (cname, cemail, cmessage) VALUES ('{$cname}', '{$cemail}', '{$cmessage}')";
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Database error occurred."]);
+    }
+} else {
+    echo json_encode(["status" => "error", "message" => "No data received."]);
 }
 ?>
