@@ -1,22 +1,21 @@
 <?php
-    session_start();
-    if(isset($_SESSION['status'])||isset($_COOKIE['status'])){
-?>
+session_start();
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
+  ?>
 
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <link rel="stylesheet" href="../../asset/CSS/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="../../asset/Javascript/index.js"></script>
   </head>
+
   <body>
     <!--Header-->
     <header>
@@ -37,9 +36,7 @@
             <div class="nav-icon">
               <a href="#"><i class="fa-solid fa-bell"></i></a>
               <a href="#"><i class="fa-solid fa-gear"></i></a>
-              <a href="../../controller/logout.php"
-                ><i class="fa-solid fa-right-from-bracket"></i
-              ></a>
+              <a href="../../controller/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
           </div>
         </div>
@@ -228,10 +225,11 @@
       </div>
     </section>
   </body>
-</html>
-<?php
-    }else{
-        header('location: ../User_Authentication_feature/login.html');
-    }
+
+  </html>
+  <?php
+} else {
+  header('location: ../User_Authentication_feature/login.html');
+}
 
 ?>

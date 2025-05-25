@@ -1805,7 +1805,7 @@ input[type="number"]::-webkit-outer-spin-button {
       margin-right: 10px;
     }
 
-    .acontent button[type="submit"] {
+    .acontent button[id="ausearch"] {
       padding: 10px 20px;
       background-color: #3a3f47;
       border: none;
@@ -1814,6 +1814,38 @@ input[type="number"]::-webkit-outer-spin-button {
       cursor: pointer;
     }
 
-    .acontent button[type="submit"]:hover {
+    .acontent button[id="ausearch"]:hover {
       background-color: #50555d;
     }
+  #usertabeladmin {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: #05510a;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+#usertabeladmin thead {
+  background-color: #007B5E;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+#usertabeladmin th,
+#usertabeladmin td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #0b9d28;
+}
+button[id="auload"] {
+      padding: 10px 20px;
+      background-color: #3a3f47;
+      margin-top: 10px;
+      margin-left: 635px;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+}
