@@ -445,7 +445,7 @@ function profilevalidation() {
     let domainPart = email.split("@")[1];
     if (!domainPart || domainPart.split(".").length < 2) {
       errore.innerHTML =
-        "Invalid email: Invalid domain name (e.g., @example.com).";
+        "Invalid email: Invalid domain name (___@____.com).";
       errore.style.color = "red";
       return;
     }
@@ -510,7 +510,7 @@ function seatload(value) {
 }
 
 function updateSeatAvailability() {
-  const allSeats = document.querySelectorAll("input[type='button']");
+  const allSeats = document.querySelectorAll("input[id='tb']");
   const currentType = document
     .getElementById("seattype")
     .innerText.toLowerCase();
@@ -579,7 +579,7 @@ function calculateTotal() {
   let quantity = parseInt(document.getElementById("ticketquantityInput").value);
   let seatType = document.getElementById("seattype").innerText;
   let amenity = document.getElementById("amenities").innerText;
-  let amenityQuantity = parseInt(
+  let amenityquantity = parseInt(
     document.getElementById("amenityQuantity").value
   );
   let upgrades = document.querySelectorAll(".upgrade:checked");
@@ -593,14 +593,14 @@ function calculateTotal() {
     total += 1200;
   }
 
-  let amenityquantity = document.getElementById("amenityQuantity");
-  let amenityText = amenity + ` (x${amenityQuantity})`;
+  let amenityQuantity = document.getElementById("amenityQuantity");
+  let amenityText = amenity + ` (x${amenityquantity})`;
   document.getElementById("amenities").innerText = amenityText;
 
-  if (amenity === "Combo 1") total += 350 * amenityQuantity;
-  else if (amenity === "Combo 2") total += 450 * amenityQuantity;
-  else if (amenity === "Combo 3") total += 500 * amenityQuantity;
-  else if (amenity === "Surprise Combo") total += 600 * amenityQuantity;
+  if (amenity === "Combo 1") total += 350 * amenityquantity;
+  else if (amenity === "Combo 2") total += 450 * amenityquantity;
+  else if (amenity === "Combo 3") total += 500 * amenityquantity;
+  else if (amenity === "Surprise Combo") total += 600 * amenityquantity;
 
   upgrades.forEach((cb) => {
     if (cb.value === "VIP Parking Pass") total += 1000;
