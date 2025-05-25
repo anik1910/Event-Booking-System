@@ -17,23 +17,23 @@ if (isset($_REQUEST['submit'])) {
     }
 
     $sql = "insert into registration(fname, email, password) values('{$fname}', '{$email}', '{$password}')";
-    if(mysqli_query($con, $sql))
-    {
-        $_SESSION['fname'] = $fname;
-        
-        $src = $_FILES['nid_file']['tmp_name'];
-        $ext = explode('.', $_FILES['nid_file']['name']);
-        $cut_email = explode('@', $email)[0];
-        $des = '../asset/userNID/' . $cut_email . '.' . $ext[1];
+    $sql1 = "insert into profilemanagement(fullname,email,upassword) values('{$fname}','{$email}','{$password}')";
+    if (mysqli_query($con, $sql)) {
+        if (mysqli_query($con, $sql1)) {
+            $_SESSION['fname'] = $fname;
+
+            $src = $_FILES['nid_file']['tmp_name'];
+            $ext = explode('.', $_FILES['nid_file']['name']);
+            $cut_email = explode('@', $email)[0];
+            $des = '../asset/userNID/' . $cut_email . '.' . $ext[1];
 
             if (move_uploaded_file($src, $des)) {
                 //
             }
 
-        header('location: ../View/User_Authentication_feature/login.html');
-    }
-    else
-    {
+            header('location: ../View/User_Authentication_feature/login.html');
+        }
+    } else {
         header('location: ../View/User_Authentication_feature/signup.php');
     }
 }

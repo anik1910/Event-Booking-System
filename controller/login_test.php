@@ -13,7 +13,6 @@ if (isset($_REQUEST['submit'])) {
     if ($status) {
         $_SESSION['status'] = true;
         $_SESSION['email'] = $email;
-
         if (isset($_REQUEST['remember'])) {
             setcookie('status', 'true', time() + 5000, '/');
         }

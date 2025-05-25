@@ -27,10 +27,10 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
           <div class="right-nav">
             <div class="user-info">
               <span>Welcome</span>
-              <a href="../Profile_Management_feature/profilemanagement.html">
-              <span class="user">
-              <?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : 'User'; ?>
-              </span>
+              <a href="../Profile_Management_feature/profilemanagement.php">
+                <span class="user">
+                  <?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : 'User'; ?>
+                </span>
               </a>
             </div>
             <div class="nav-icon">
@@ -111,12 +111,8 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 
                   <div class="event-price">
                     <h4>$45 - $130</h4>
-                    <input
-                      type="button"
-                      value="Book Now"
-                      class="book-now-button"
-                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
-                    />
+                    <input type="button" value="Book Now" class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';" />
                   </div>
                 </div>
               </div>
@@ -144,12 +140,8 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 
                   <div class="event-price">
                     <h4>$45 - $130</h4>
-                    <input
-                      type="button"
-                      value="Book Now"
-                      class="book-now-button"
-                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
-                    />
+                    <input type="button" value="Book Now" class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';" />
                   </div>
                 </div>
               </div>
@@ -177,12 +169,8 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 
                   <div class="event-price">
                     <h4>$45 - $130</h4>
-                    <input
-                      type="button"
-                      value="Book Now"
-                      class="book-now-button"
-                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
-                    />
+                    <input type="button" value="Book Now" class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';" />
                   </div>
                 </div>
               </div>
@@ -210,12 +198,8 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 
                   <div class="event-price">
                     <h4>$45 - $130</h4>
-                    <input
-                      type="button"
-                      value="Book Now"
-                      class="book-now-button"
-                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
-                    />
+                    <input type="button" value="Book Now" class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';" />
                   </div>
                 </div>
               </div>
