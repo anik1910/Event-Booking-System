@@ -21,6 +21,8 @@ if(isset($_REQUEST['submit']))
     $sql = "insert into registration(fname, email, password) values('{$fname}', '{$email}', '{$password}')";
     if(mysqli_query($con, $sql))
     {
+        $_SESSION['fname'] = $fname;
+        
         $src = $_FILES['nid_file']['tmp_name'];
         $ext = explode('.', $_FILES['nid_file']['name']);
         $cut_email = explode('@', $email)[0];

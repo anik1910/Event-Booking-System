@@ -29,7 +29,9 @@
             <div class="user-info">
               <span>Welcome</span>
               <a href="../Profile_Management_feature/profilemanagement.html">
-                <span class="user">Anik</span>
+              <span class="user">
+              <?php echo isset($_SESSION['fname']) ? $_SESSION['fname'] : 'User'; ?>
+              </span>
               </a>
             </div>
             <div class="nav-icon">
@@ -116,6 +118,7 @@
                       type="button"
                       value="Book Now"
                       class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
                     />
                   </div>
                 </div>
@@ -148,6 +151,7 @@
                       type="button"
                       value="Book Now"
                       class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
                     />
                   </div>
                 </div>
@@ -180,6 +184,7 @@
                       type="button"
                       value="Book Now"
                       class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
                     />
                   </div>
                 </div>
@@ -212,6 +217,7 @@
                       type="button"
                       value="Book Now"
                       class="book-now-button"
+                      onclick="window.location.href='../Venue_Details_feature/venuedetails.html';"
                     />
                   </div>
                 </div>
