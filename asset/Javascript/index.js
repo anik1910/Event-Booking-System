@@ -126,6 +126,37 @@ function signupValidation() {
 }
 
 // Contact Us Form Validation
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (!contactUsValidation()) {
+    return;
+  }
+
+  const json = {
+    cname: document.getElementById("cname").value.trim(),
+    cemail: document.getElementById("cemail").value.trim(),
+    cmessage: document.getElementById("cmessage").value.trim(),
+  };
+
+  let data = JSON.stringify(json);
+
+  let xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "../../controller/contactUs_store.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("json=" + data);
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let response = JSON.parse(this.responseText);
+      alert(response.message);
+      if (response.status === "success") {
+        document.getElementById("contactForm").reset();
+      }
+    }
+  };
+});
+
 function contactUsValidation() {
   let nameField = document.getElementById("cname");
   let emailField = document.getElementById("cemail");
@@ -172,10 +203,6 @@ function contactUsValidation() {
     valid = false;
   } else {
     messageError.innerHTML = "";
-  }
-
-  if (valid) {
-    alert("Message Sent Successfully!");
   }
 
   return valid;
@@ -285,20 +312,8 @@ function requestCancelValidation() {
   } else {
     methodError.innerHTML = "";
   }
-
-  if (valid) {
-    alert("Cancellation request submitted successfully!");
-
-    orderField.value = "";
-    dateField.value = "";
-    categoryField.selectedIndex = 0;
-    nameField.value = "";
-    emailField.value = "";
-    reasonField.selectedIndex = 0;
-    methodField.selectedIndex = 0;
-  }
-
-  return false;
+  alert("Cancellation request submitted successfully!");
+  return valid;
 }
 
 //Track-status Validation

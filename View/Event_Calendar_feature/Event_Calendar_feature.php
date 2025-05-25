@@ -22,7 +22,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
       <nav>
         <div class="nav-container">
           <div class="nav-logo">
-            <a href="landing_page.html">EvenBoo</a>
+            <a href="../Landing_Page_feature/landing_page.html">EvenBoo</a>
           </div>
           <div class="right-nav">
             <div class="user-info">
