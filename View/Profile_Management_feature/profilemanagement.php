@@ -65,7 +65,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     </div>
 
     <div>
-      <input id="pmsubmit" type="submit" value="Submit">
+      <input id="pmsubmit" type="submit" value="Submit" onclick="profilevalidation()">
     </div>
   </form>
 </body>
