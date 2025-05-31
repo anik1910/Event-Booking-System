@@ -34,6 +34,14 @@ body {
   margin: 15px auto;
   max-width: 400px;
 }
+.tb{
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+}
 
 input[name="vipseat"] {
   background-color: #1a1a1a;

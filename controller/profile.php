@@ -16,8 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $upassword = $_POST['upassword'];
 
     $pmq = "UPDATE profilemanagement SET fullname = '$fullname', phonenumber = '$phonenumber', uaddress = '$uaddress', upassword = '$upassword' WHERE email = '$email'";
+    $rq = "UPDATE registration SET fname = '$fullname', password = '$upassword' WHERE email = '$email'";
 
     $updateSuccess = mysqli_query($con, $pmq);
+    $updateRSuccess = mysqli_query($con, $rq);
 
     if (isset($_FILES['myfile']) && $_FILES['myfile']['error'] === 0) {
         $src = $_FILES['myfile']['tmp_name'];
@@ -31,9 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($updateSuccess) {
-        $_SESSION['update_success'] = "Profile updated successfully!";
-        header("Location: ../View/Profile_Management_feature/profilemanagement.php");
-        exit();
+        if ($updateRSuccess) {
+            $_SESSION['update_success'] = "Profile updated successfully!";
+            header("Location: ../View/Profile_Management_feature/profilemanagement.php");
+            exit();
+        }
     } else {
         echo "Update failed: " . mysqli_error($con);
     }

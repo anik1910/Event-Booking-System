@@ -208,21 +208,22 @@ function contactUsValidation() {
   return valid;
 }
 
-//Admin Page
-function openTab(evt, tabId) {
-  var contents = document.getElementsByClassName("acontent");
-  for (var i = 0; i < contents.length; i++) {
-    contents[i].style.display = "none";
-  }
+// //Admin Page
+// function openTab(evt, tabId) {
+//   var contents = document.getElementsByClassName("acontent");
+//   for (var i = 0; i < contents.length; i++) {
+//     contents[i].style.display = "none";
+//   }
 
-  var links = document.getElementsByClassName("link");
-  for (var i = 0; i < links.length; i++) {
-    links[i].classList.remove("active");
-  }
+//   var links = document.getElementsByClassName("link");
+//   for (var i = 0; i < links.length; i++) {
+//     links[i].classList.remove("active");
+//   }
 
-  document.getElementById(tabId).style.display = "block";
-  evt.currentTarget.classList.add("active");
-}
+//   document.getElementById(tabId).style.display = "block";
+//   evt.currentTarget.classList.add("active");
+// }
+
 
 //Request-Cancellation Validation
 function requestCancelValidation() {
@@ -391,121 +392,105 @@ function showSlides(n) {
 
 //Profile Management
 function profilevalidation() {
-  var name = document.getElementById("pmfullName").value.trim();
-  var email = document.getElementById("pmemail").value.trim();
-  var phone = document.getElementById("pmhone");
-  var address = document.getElementById("pmaddress");
-  var password = document.getElementById("pmpassword");
-  var error = document.getElementById("error");
-  var errorn = document.getElementById("errorn");
-  var errore = document.getElementById("errore");
+  let name = document.getElementById("pmfullName").value.trim();
+  let phone = document.getElementById("pmphone").value.trim();
+  let address = document.getElementById("pmaddress").value.trim();
+  let password = document.getElementById("pmpassword").value.trim();
 
-  if (name == "") {
-    name.placeholder = name.value;
-    name.value = "";
-    errore.innerHTML = "";
+  let errorn = document.getElementById("errorn");
+  let errorpn = document.getElementById("errorpn");
+  let errora = document.getElementById("errora");
+  let errorp = document.getElementById("errorp");
+  let error = document.getElementById("error");
+
+  let valid = true;
+
+  error.innerHTML = "";
+  errorn.innerHTML = "";
+  errorpn.innerHTML = "";
+  errora.innerHTML = "";
+  errorp.innerHTML = "";
+
+  if (name === "") {
+    errorn.innerHTML = "Name field is empty";
+    valid = false;
+  } else if (!((name[0] >= "A" && name[0] <= "Z") || (name[0] >= "a" && name[0] <= "z"))) {
+    errorn.innerHTML = "Invalid name: Must start with a letter.";
+    valid = false;
   }
-  if (name !== "") {
-    if (
-      !(name[0] >= "A" && name[0] <= "Z") &&
-      !(name[0] >= "a" && name[0] <= "z")
-    ) {
-      errorn.innerHTML = "Invalid name: Must start with a letter.";
-      errorn.style.color = "red";
-      return;
-    }
-    let words = name.split(" ").filter((word) => word.length > 0);
-    if (words.length < 2) {
-      errorn.innerHTML = "Invalid name: Must contain at least two words.";
-      errorn.style.color = "red";
-      return;
-    }
-    for (let char of name) {
-      if (
-        !(
-          (char >= "A" && char <= "Z") ||
-          (char >= "a" && char <= "z") ||
-          char === "." ||
-          char === "-" ||
-          char === " "
-        )
-      ) {
-        errorn.innerHTML =
-          "Invalid name: Only letters, dot (.), and dash (-) are allowed.";
-        errorn.style.color = "red";
-        return;
+
+  if (phone === "") {
+    errorpn.innerHTML = "Phone number is required.";
+    valid = false;
+  } else if (phone.length !== 11) {
+    errorpn.innerHTML = "Invalid phone number: Must be exactly 11 digits.";
+    valid = false;
+  } else {
+    for (let i = 0; i < phone.length; i++) {
+      if (phone[i] < "0" || phone[i] > "9") {
+        errorpn.innerHTML = "Invalid phone number: Only digits allowed.";
+        valid = false;
+        break;
       }
     }
   }
-  if (email == "") {
-    email.placeholder = email.value;
-    email.value = "";
-    errorn.innerHTML = "";
-  }
-  if (email !== "") {
-    if (
-      !(email[0] >= "A" && email[0] <= "Z") &&
-      !(email[0] >= "a" && email[0] <= "z") &&
-      !(email[0] >= "0" && email[0] <= "9")
-    ) {
-      errore.innerHTML = "Invalid email: Must start with a letter or number.";
-      errore.style.color = "red";
-      return;
-    }
-    if (!email.includes("@") || !email.includes(".")) {
-      errore.innerHTML = "Invalid email: Must contain '@' and '.'";
-      errore.style.color = "red";
-      return;
-    }
-    let domainPart = email.split("@")[1];
-    if (!domainPart || domainPart.split(".").length < 2) {
-      errore.innerHTML =
-        "Invalid email: Invalid domain name (___@____.com).";
-      errore.style.color = "red";
-      return;
-    }
-  }
-  updateProfile();
-}
-function updateProfile() {
-  var fullName = document.getElementById("pmfullName");
-  var email = document.getElementById("pmemail");
-  var phone = document.getElementById("pmphone");
-  var address = document.getElementById("pmaddress");
-  var password = document.getElementById("pmpassword");
-  var error = document.getElementById("error");
 
-  if (fullName.value !== "") {
-    fullName.placeholder = fullName.value;
-    fullName.value = "";
-    error.innerHTML = "Updated Successfully!";
-    error.style.color = "green";
+  if (address === "") {
+    errora.innerHTML = "Address is required.";
+    valid = false;
   }
-  if (email.value !== "") {
-    email.placeholder = email.value;
-    email.value = "";
-    error.innerHTML = "Updated Successfully!";
-    error.style.color = "green";
+
+  if (password === "") {
+    errorp.innerHTML = "Password is required.";
+    valid = false;
+  } else if (password.length < 6) {
+    errorp.innerHTML = "Password must be at least 6 characters.";
+    valid = false;
   }
-  if (phone.value !== "") {
-    phone.placeholder = phone.value;
-    phone.value = "";
-    error.innerHTML = "Updated Successfully!";
-    error.style.color = "green";
-  }
-  if (address.value !== "") {
-    address.placeholder = address.value;
-    address.value = "";
-    error.innerHTML = "Updated Successfully!";
-    error.style.color = "green";
-  }
-  if (password.value !== "") {
-    password.value = "";
-    password.placeholder = "Enter new password";
-    error.innerHTML = "Updated Successfully!";
-    error.style.color = "green";
-  }
+
+  return valid;
 }
+
+
+// function updateProfile() {
+//   var fullName = document.getElementById("pmfullName");
+//   var email = document.getElementById("pmemail");
+//   var phone = document.getElementById("pmphone");
+//   var address = document.getElementById("pmaddress");
+//   var password = document.getElementById("pmpassword");
+//   var error = document.getElementById("error");
+
+//   if (fullName.value !== "") {
+//     fullName.placeholder = fullName.value;
+//     fullName.value = "";
+//     error.innerHTML = "Updated Successfully!";
+//     error.style.color = "green";
+//   }
+//   if (email.value !== "") {
+//     email.placeholder = email.value;
+//     email.value = "";
+//     error.innerHTML = "Updated Successfully!";
+//     error.style.color = "green";
+//   }
+//   if (phone.value !== "") {
+//     phone.placeholder = phone.value;
+//     phone.value = "";
+//     error.innerHTML = "Updated Successfully!";
+//     error.style.color = "green";
+//   }
+//   if (address.value !== "") {
+//     address.placeholder = address.value;
+//     address.value = "";
+//     error.innerHTML = "Updated Successfully!";
+//     error.style.color = "green";
+//   }
+//   if (password.value !== "") {
+//     password.value = "";
+//     password.placeholder = "Enter new password";
+//     error.innerHTML = "Updated Successfully!";
+//     error.style.color = "green";
+//   }
+// }
 function changeImage(input) {
   if (input.files && input.files[0]) {
     document.getElementById("preview").src = URL.createObjectURL(
@@ -513,6 +498,7 @@ function changeImage(input) {
     );
   }
 }
+
 //ticket
 let selectedSeats = [];
 
@@ -521,24 +507,20 @@ function seatload(value) {
   selectedSeats = [];
   updateSeatAvailability();
   updateSeatDisplay();
+  document.getElementById("ticketquantityDisplay").innerText = document.getElementById("ticketquantityInput").value;
   calculateTotal();
 }
 
 function updateSeatAvailability() {
-  const allSeats = document.querySelectorAll("input[id='tb']");
-  const currentType = document
-    .getElementById("seattype")
-    .innerText.toLowerCase();
-
+  const allSeats = document.querySelectorAll(".tb");
   allSeats.forEach((seat) => {
     seat.classList.remove("selected-seat");
-    seat.disabled = !seat.name.toLowerCase().includes(currentType);
+    seat.disabled = false;
   });
 }
 
 function selectSeat(button) {
-  const quantity =
-    parseInt(document.getElementById("ticketquantityInput").value) || 0;
+  const quantity = parseInt(document.getElementById("ticketquantityInput").value) || 0;
   const seatNum = button.value;
 
   if (selectedSeats.includes(seatNum)) {
@@ -559,6 +541,7 @@ function selectSeat(button) {
 
 function updateSeatDisplay() {
   document.getElementById("seatnumber").innerText = selectedSeats.join(", ");
+  document.getElementById("ticketquantityDisplay").innerText = document.getElementById("ticketquantityInput").value;
 }
 
 function amenitiesload(value) {
@@ -573,31 +556,27 @@ function promoload(value) {
 
 function updateUpgrades() {
   const checkboxes = document.querySelectorAll(".upgrade:checked");
-  let selectedUpgrades = Array.from(checkboxes)
+  const selectedUpgrades = Array.from(checkboxes)
     .map((cb) => cb.value)
     .join(", ");
   document.getElementById("addupgrade").innerText = selectedUpgrades;
   calculateTotal();
 }
 
-document
-  .getElementById("ticketquantityInput")
-  .addEventListener("input", function () {
-    document.getElementById("ticketquantityDisplay").innerText = this.value;
-    selectedSeats = [];
-    updateSeatAvailability();
-    updateSeatDisplay();
-    calculateTotal();
-  });
+document.getElementById("ticketquantityInput").addEventListener("input", function () {
+  document.getElementById("ticketquantityDisplay").innerText = this.value;
+  selectedSeats = [];
+  updateSeatAvailability();
+  updateSeatDisplay();
+  calculateTotal();
+});
 
 function calculateTotal() {
-  let quantity = parseInt(document.getElementById("ticketquantityInput").value);
-  let seatType = document.getElementById("seattype").innerText;
-  let amenity = document.getElementById("amenities").innerText;
-  let amenityquantity = parseInt(
-    document.getElementById("amenityQuantity").value
-  );
-  let upgrades = document.querySelectorAll(".upgrade:checked");
+  const quantity = parseInt(document.getElementById("ticketquantityInput").value);
+  const seatType = document.getElementById("seattype").innerText;
+  const amenity = document.getElementById("amenities").innerText;
+  let amenityquantity = parseInt(document.getElementById("amenityQuantity").value);
+  const upgrades = document.querySelectorAll(".upgrade:checked");
   let total = 0;
 
   if (seatType === "VIP") {
@@ -608,14 +587,18 @@ function calculateTotal() {
     total += 1200;
   }
 
-  let amenityQuantity = document.getElementById("amenityQuantity");
-  let amenityText = amenity + ` (x${amenityquantity})`;
+  if (amenityquantity < 0 || isNaN(amenityquantity)) {
+    amenityquantity = 0;
+    document.getElementById("amenityQuantity").value = 0;
+  }
+
+  const amenityText = amenity + ` (x${amenityquantity})`;
   document.getElementById("amenities").innerText = amenityText;
 
-  if (amenity === "Combo 1") total += 350 * amenityquantity;
-  else if (amenity === "Combo 2") total += 450 * amenityquantity;
-  else if (amenity === "Combo 3") total += 500 * amenityquantity;
-  else if (amenity === "Surprise Combo") total += 600 * amenityquantity;
+  if (amenity.includes("Combo 1")) total += 350 * amenityquantity;
+  else if (amenity.includes("Combo 2")) total += 450 * amenityquantity;
+  else if (amenity.includes("Combo 3")) total += 500 * amenityquantity;
+  else if (amenity.includes("Surprise Combo")) total += 600 * amenityquantity;
 
   upgrades.forEach((cb) => {
     if (cb.value === "VIP Parking Pass") total += 1000;
@@ -623,8 +606,9 @@ function calculateTotal() {
     else if (cb.value === "Toilets") total += 100;
   });
 
-  let promoCode = document.getElementById("promocode").innerText.trim();
+  const promoCode = document.getElementById("promocode").innerText.trim().toUpperCase();
   if (promoCode === "DISCOUNT50") total -= 50;
+
   if (total < 0) total = 0;
 
   document.getElementById("totalprice").innerText = total + " Tk";

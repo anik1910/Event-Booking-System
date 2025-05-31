@@ -27,7 +27,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 </head>
 
 <body>
-  <form method="POST" action="../../controller/profile.php" enctype="multipart/form-data">
+  <form method="POST" action="../../controller/profile.php" enctype="multipart/form-data"
+    onsubmit="return profilevalidation()">
     <div>
       <img id="preview" src="../../asset/image/udi.png" alt="Profile" class="profile-pic">
       <br>
@@ -38,6 +39,7 @@ if ($result && mysqli_num_rows($result) > 0) {
       <label>Full Name:</label><br>
       <input type="text" id="pmfullName" name="fullname"
         value="<?php echo htmlspecialchars($profileData['fullname']); ?>">
+      <div id="errorn"></div>
     </div>
 
     <div>
@@ -50,22 +52,25 @@ if ($result && mysqli_num_rows($result) > 0) {
       <label>Phone Number:</label><br>
       <input type="text" id="pmphone" name="phonenumber"
         value="<?php echo htmlspecialchars($profileData['phonenumber']); ?>">
+      <div id="errorpn"></div>
     </div>
 
     <div>
       <label>Address:</label><br>
       <input type="text" id="pmaddress" name="uaddress"
         value="<?php echo htmlspecialchars($profileData['uaddress']); ?>">
+      <div id="errora"></div>
     </div>
 
     <div>
       <label>Password:</label><br>
       <input type="password" id="pmpassword" name="upassword"
         value="<?php echo htmlspecialchars($profileData['upassword']); ?>">
+      <div id="errorp"></div>
     </div>
-
+    <div id="error"></div>
     <div>
-      <input id="pmsubmit" type="submit" value="Submit" onclick="profilevalidation()">
+      <input id="pmsubmit" type="submit" value="Submit">
     </div>
   </form>
 </body>
