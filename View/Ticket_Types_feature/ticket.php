@@ -10,7 +10,7 @@ if (isset($_SESSION['status'])) {
     <meta charset="UTF-8">
     <title>Ticket Booking</title>
     <link rel="stylesheet" href="../../asset/CSS/ticket.css">
-    <script src="../../asset/Javascript/index.js"></script>
+    <!-- <script src="../../asset/Javascript/index.js" defer></script> -->
   </head>
 
   <body>
@@ -18,12 +18,9 @@ if (isset($_SESSION['status'])) {
 
     <div class="seattype">
       <label>Select Seat Type</label><br>
-      <input type="radio" name="seatType" value="VIP" onclick="seatload(this.value)">
-      VIP (1000 Tk)<br>
-      <input type="radio" name="seatType" value="Regular" onclick="seatload(this.value)">
-      Regular (500 Tk)<br>
-      <input type="radio" name="seatType" value="Group" onclick="seatload(this.value)">
-      4 person Group (1200 Tk)<br>
+      <input type="radio" name="seatType" value="VIP" onclick="seatload(this.value)"> VIP (1000 Tk)<br>
+      <input type="radio" name="seatType" value="Regular" onclick="seatload(this.value)"> Regular (500 Tk)<br>
+      <input type="radio" name="seatType" value="Group" onclick="seatload(this.value)"> 4 person Group (1200 Tk)<br>
     </div>
 
     <div>
@@ -33,40 +30,28 @@ if (isset($_SESSION['status'])) {
 
     <div>
       <label>Seat Selection</label><br>
-      <input type="button" class="tb" value="S1" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S2" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S3" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S4" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S5" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S6" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S7" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S8" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S9" onclick="selectSeat(this)">
-      <input type="button" class="tb" value="S10" onclick="selectSeat(this)">
+      <?php for ($i = 1; $i <= 10; $i++): ?>
+        <input type="button" class="tb" value="S<?= $i ?>" onclick="selectSeat(this)">
+      <?php endfor; ?>
     </div>
-
 
     <div>
       <label>Add Amenities</label> (Optional)<br>
-      <input type="radio" name="amenities" value="Combo 1" onclick="amenitiesload(this.value)">
-      Combo 1 (350 Tk)<br>
-      <input type="radio" name="amenities" value="Combo 2" onclick="amenitiesload(this.value)">
-      Combo 2 (450 Tk)<br>
-      <input type="radio" name="amenities" value="Combo 3" onclick="amenitiesload(this.value)">
-      Combo 3 (500 Tk)<br>
-      <input type="radio" name="amenities" value="Surprise Combo" onclick="amenitiesload(this.value)">
-      Surprise Combo (600 Tk)<br>
+      <input type="radio" name="amenities" value="Combo 1" onclick="amenitiesload(this.value)"> Combo 1 (350 Tk)<br>
+      <input type="radio" name="amenities" value="Combo 2" onclick="amenitiesload(this.value)"> Combo 2 (450 Tk)<br>
+      <input type="radio" name="amenities" value="Combo 3" onclick="amenitiesload(this.value)"> Combo 3 (500 Tk)<br>
+      <input type="radio" name="amenities" value="Surprise Combo" onclick="amenitiesload(this.value)"> Surprise Combo (600
+      Tk)<br>
       <br><label>Quantity: </label><input id="amenityQuantity" type="number" min="0" value="0" oninput="calculateTotal()">
     </div>
 
     <div>
       <label>Add Upgrades</label> (Optional)<br>
-      <input type="checkbox" class="upgrade" value="VIP Parking Pass" onclick="updateUpgrades()">
-      VIP Parking Pass (1000 Tk)<br>
-      <input type="checkbox" class="upgrade" value="Meet & Greet Artists" onclick="updateUpgrades()">
-      Meet & Greet Artists (2500 Tk)<br>
-      <input type="checkbox" class="upgrade" value="Toilets" onclick="updateUpgrades()">
-      Toilets (100 Tk)<br>
+      <input type="checkbox" class="upgrade" value="VIP Parking Pass" onclick="updateUpgrades()"> VIP Parking Pass (1000
+      Tk)<br>
+      <input type="checkbox" class="upgrade" value="Meet & Greet Artists" onclick="updateUpgrades()"> Meet & Greet Artists
+      (2500 Tk)<br>
+      <input type="checkbox" class="upgrade" value="Toilets" onclick="updateUpgrades()"> Toilets (100 Tk)<br>
     </div>
 
     <div>
@@ -86,13 +71,13 @@ if (isset($_SESSION['status'])) {
         <tr>
           <td>Seat Number:</td>
           <td>
-            <p id="seatnumber">1</p>
+            <p id="seatnumber"></p>
           </td>
         </tr>
         <tr>
           <td>Ticket Quantity:</td>
           <td>
-            <p id="ticketquantityDisplay"></p>
+            <p id="ticketquantityDisplay">1</p>
           </td>
         </tr>
         <tr>
@@ -123,6 +108,116 @@ if (isset($_SESSION['status'])) {
       <input id="tsubmit" type="button" value="Purchase"
         onclick="window.location.href='../Payment_Processing_feature/payment_processing.php';">
     </div>
+    <script>
+      let selectedSeats = [];
+
+      function seatload(value) {
+        document.getElementById("seattype").innerText = value;
+        selectedSeats = [];
+        updateSeatAvailability();
+        updateSeatDisplay();
+        updateTicketQuantity();
+        calculateTotal();
+      }
+
+      function updateSeatAvailability() {
+        const allSeats = document.querySelectorAll(".tb");
+        allSeats.forEach(seat => {
+          seat.classList.remove("selected-seat");
+          seat.disabled = false;
+        });
+      }
+
+      function selectSeat(button) {
+        const quantity = parseInt(document.getElementById("ticketquantityInput").value) || 0;
+        const seatNum = button.value;
+
+        if (selectedSeats.includes(seatNum)) {
+          selectedSeats = selectedSeats.filter(s => s !== seatNum);
+          button.classList.remove("selected-seat");
+        } else {
+          if (selectedSeats.length < quantity) {
+            selectedSeats.push(seatNum);
+            button.classList.add("selected-seat");
+          } else {
+            alert("You cannot select more seats than the ticket quantity.");
+          }
+        }
+
+        updateSeatDisplay();
+        calculateTotal();
+      }
+
+      function updateSeatDisplay() {
+        document.getElementById("seatnumber").innerText = selectedSeats.join(", ");
+      }
+
+      function updateTicketQuantity() {
+        const quantity = document.getElementById("ticketquantityInput").value;
+        document.getElementById("ticketquantityDisplay").innerText = quantity;
+        selectedSeats = [];
+        updateSeatAvailability();
+        updateSeatDisplay();
+        calculateTotal();
+      }
+
+      function amenitiesload(value) {
+        document.getElementById("amenities").setAttribute("data-name", value);
+        calculateTotal();
+      }
+
+      function promoload(value) {
+        document.getElementById("promocode").innerText = value;
+        calculateTotal();
+      }
+
+      function updateUpgrades() {
+        const checkboxes = document.querySelectorAll(".upgrade:checked");
+        const selected = Array.from(checkboxes).map(cb => cb.value).join(", ");
+        document.getElementById("addupgrade").innerText = selected;
+        calculateTotal();
+      }
+
+      function calculateTotal() {
+        let quantity = parseInt(document.getElementById("ticketquantityInput").value);
+        const seatType = document.getElementById("seattype").innerText.trim();
+        const amenity = document.getElementById("amenities").getAttribute("data-name") || "";
+        let amenityquantity = parseInt(document.getElementById("amenityQuantity").value);
+        const upgrades = document.querySelectorAll(".upgrade:checked");
+        let total = 0;
+
+        if (seatType === "VIP") total += 1000 * quantity;
+        else if (seatType === "Regular") total += 500 * quantity;
+        else if (seatType === "Group") total += 1200;
+
+        if (amenityquantity < 0 || isNaN(amenityquantity)) {
+          amenityquantity = 0;
+          document.getElementById("amenityQuantity").value = 0;
+        }
+
+        const amenityText = amenity ? `${amenity} (x${amenityquantity})` : "";
+        document.getElementById("amenities").innerText = amenityText;
+
+        if (amenity.includes("Combo 1")) total += 350 * amenityquantity;
+        else if (amenity.includes("Combo 2")) total += 450 * amenityquantity;
+        else if (amenity.includes("Combo 3")) total += 500 * amenityquantity;
+        else if (amenity.includes("Surprise Combo")) total += 600 * amenityquantity;
+
+        upgrades.forEach(cb => {
+          if (cb.value === "VIP Parking Pass") total += 1000;
+          else if (cb.value === "Meet & Greet Artists") total += 2500;
+          else if (cb.value === "Toilets") total += 100;
+        });
+
+        const promoCode = document.getElementById("promocode").innerText.trim().toUpperCase();
+        if (promoCode === "DISCOUNT50") total -= 50;
+        if (total < 0) total = 0;
+
+        document.getElementById("totalprice").innerText = total + " Tk";
+      }
+
+    </script>
+
   </body>
 
   </html>
@@ -131,5 +226,4 @@ if (isset($_SESSION['status'])) {
 } else {
   header('location: ../User_Authentication_feature/login.html');
 }
-
 ?>

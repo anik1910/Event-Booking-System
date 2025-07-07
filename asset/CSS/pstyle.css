@@ -74,9 +74,13 @@ input[id="pmsubmit"]:hover {
 #errorn,
 #errorpn,
 #errora,
-#errorp,
-#error {
+#errorp {
   color: red;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
+#error {
+  color: green;
   font-size: 0.85em;
   margin-bottom: 10px;
 }

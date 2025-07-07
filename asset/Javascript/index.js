@@ -425,7 +425,7 @@ function profilevalidation() {
   } else if (phone.length !== 11) {
     errorpn.innerHTML = "Invalid phone number: Must be exactly 11 digits.";
     valid = false;
-  } else {
+  } else if(phone.length == 11){
     for (let i = 0; i < phone.length; i++) {
       if (phone[i] < "0" || phone[i] > "9") {
         errorpn.innerHTML = "Invalid phone number: Only digits allowed.";
@@ -446,6 +446,10 @@ function profilevalidation() {
   } else if (password.length < 6) {
     errorp.innerHTML = "Password must be at least 6 characters.";
     valid = false;
+  }
+  else{
+    error.innerHTML="Updated Successfully";
+    valid=true;
   }
 
   return valid;
@@ -499,7 +503,124 @@ function changeImage(input) {
   }
 }
 
-//ticket
+// //ticket
+// let selectedSeats = [];
+
+// function seatload(value) {
+//   document.getElementById("seattype").innerText = value;
+//   selectedSeats = [];
+//   updateSeatAvailability();
+//   updateSeatDisplay();
+//   document.getElementById("ticketquantityDisplay").innerText = document.getElementById("ticketquantityInput").value;
+//   calculateTotal();
+// }
+
+// function updateSeatAvailability() {
+//   const allSeats = document.querySelectorAll(".tb");
+//   allSeats.forEach((seat) => {
+//     seat.classList.remove("selected-seat");
+//     seat.disabled = false;
+//   });
+// }
+
+// function selectSeat(button) {
+//   const quantity = parseInt(document.getElementById("ticketquantityInput").value) || 0;
+//   const seatNum = button.value;
+
+//   if (selectedSeats.includes(seatNum)) {
+//     selectedSeats = selectedSeats.filter((s) => s !== seatNum);
+//     button.classList.remove("selected-seat");
+//   } else {
+//     if (selectedSeats.length < quantity) {
+//       selectedSeats.push(seatNum);
+//       button.classList.add("selected-seat");
+//     } else {
+//       alert("You cannot select more seats than the ticket quantity.");
+//     }
+//   }
+
+//   updateSeatDisplay();
+//   calculateTotal();
+// }
+
+// function updateSeatDisplay() {
+//   document.getElementById("seatnumber").innerText = selectedSeats.join(", ");
+//   document.getElementById("ticketquantityDisplay").innerText = document.getElementById("ticketquantityInput").value;
+// }
+
+// function amenitiesload(value) {
+//   document.getElementById("amenities").innerText = value;
+//   calculateTotal();
+// }
+
+// function promoload(value) {
+//   document.getElementById("promocode").innerText = value;
+//   calculateTotal();
+// }
+
+// function updateUpgrades() {
+//   const checkboxes = document.querySelectorAll(".upgrade:checked");
+//   const selectedUpgrades = Array.from(checkboxes)
+//     .map((cb) => cb.value)
+//     .join(", ");
+//   document.getElementById("addupgrade").innerText = selectedUpgrades;
+//   calculateTotal();
+// }
+
+// document.getElementById("ticketquantityInput").addEventListener("input", function () {
+//   document.getElementById("ticketquantityDisplay").innerText = this.value;
+//   selectedSeats = [];
+//   updateSeatAvailability();
+//   updateSeatDisplay();
+//   calculateTotal();
+// });
+
+// function calculateTotal() {
+//   const quantity = parseInt(document.getElementById("ticketquantityInput").value);
+//   const seatType = document.getElementById("seattype").innerText;
+//   const amenity = document.getElementById("amenities").innerText;
+//   let amenityquantity = parseInt(document.getElementById("amenityQuantity").value);
+//   const upgrades = document.querySelectorAll(".upgrade:checked");
+//   let total = 0;
+
+//   if (seatType === "VIP") {
+//     total += 1000 * quantity;
+//   } else if (seatType === "Regular") {
+//     total += 500 * quantity;
+//   } else if (seatType === "Group") {
+//     total += 1200;
+//   }
+
+//   if (amenityquantity < 0 || isNaN(amenityquantity)) {
+//     amenityquantity = 0;
+//     document.getElementById("amenityQuantity").value = 0;
+//   }
+
+//   const amenityText = amenity + ` (x${amenityquantity})`;
+//   document.getElementById("amenities").innerText = amenityText;
+
+//   if (amenity.includes("Combo 1")) total += 350 * amenityquantity;
+//   else if (amenity.includes("Combo 2")) total += 450 * amenityquantity;
+//   else if (amenity.includes("Combo 3")) total += 500 * amenityquantity;
+//   else if (amenity.includes("Surprise Combo")) total += 600 * amenityquantity;
+
+//   upgrades.forEach((cb) => {
+//     if (cb.value === "VIP Parking Pass") total += 1000;
+//     else if (cb.value === "Meet & Greet Artists") total += 2500;
+//     else if (cb.value === "Toilets") total += 100;
+//   });
+
+//   const promoCode = document.getElementById("promocode").innerText.trim().toUpperCase();
+//   if (promoCode === "DISCOUNT50") total -= 50;
+
+//   if (total < 0) total = 0;
+
+//   document.getElementById("totalprice").innerText = total + " Tk";
+// }
+
+
+
+// ticket
 let selectedSeats = [];
 
 function seatload(value) {
@@ -507,7 +628,6 @@ function seatload(value) {
   selectedSeats = [];
   updateSeatAvailability();
   updateSeatDisplay();
-  document.getElementById("ticketquantityDisplay").innerText = document.getElementById("ticketquantityInput").value;
   calculateTotal();
 }
 
@@ -545,26 +665,23 @@ function updateSeatDisplay() {
 }
 
 function amenitiesload(value) {
-  document.getElementById("amenities").innerText = value;
+  document.getElementById("amenities").setAttribute("data-amenity", value);
   calculateTotal();
 }
 
 function promoload(value) {
-  document.getElementById("promocode").innerText = value;
+  document.getElementById("promocode").innerText = value.toUpperCase();
   calculateTotal();
 }
 
 function updateUpgrades() {
   const checkboxes = document.querySelectorAll(".upgrade:checked");
-  const selectedUpgrades = Array.from(checkboxes)
-    .map((cb) => cb.value)
-    .join(", ");
+  const selectedUpgrades = Array.from(checkboxes).map(cb => cb.value).join(", ");
   document.getElementById("addupgrade").innerText = selectedUpgrades;
   calculateTotal();
 }
 
 document.getElementById("ticketquantityInput").addEventListener("input", function () {
-  document.getElementById("ticketquantityDisplay").innerText = this.value;
   selectedSeats = [];
   updateSeatAvailability();
   updateSeatDisplay();
@@ -574,31 +691,27 @@ document.getElementById("ticketquantityInput").addEventListener("input", functio
 function calculateTotal() {
   const quantity = parseInt(document.getElementById("ticketquantityInput").value);
   const seatType = document.getElementById("seattype").innerText;
-  const amenity = document.getElementById("amenities").innerText;
+  const amenity = document.getElementById("amenities").getAttribute("data-amenity") || "";
   let amenityquantity = parseInt(document.getElementById("amenityQuantity").value);
   const upgrades = document.querySelectorAll(".upgrade:checked");
   let total = 0;
 
-  if (seatType === "VIP") {
-    total += 1000 * quantity;
-  } else if (seatType === "Regular") {
-    total += 500 * quantity;
-  } else if (seatType === "Group") {
-    total += 1200;
-  }
+  if (seatType === "VIP") total += 1000 * quantity;
+  else if (seatType === "Regular") total += 500 * quantity;
+  else if (seatType === "Group") total += 1200;
 
   if (amenityquantity < 0 || isNaN(amenityquantity)) {
     amenityquantity = 0;
     document.getElementById("amenityQuantity").value = 0;
   }
 
-  const amenityText = amenity + ` (x${amenityquantity})`;
+  let amenityText = `${amenity} (x${amenityquantity})`;
   document.getElementById("amenities").innerText = amenityText;
 
-  if (amenity.includes("Combo 1")) total += 350 * amenityquantity;
-  else if (amenity.includes("Combo 2")) total += 450 * amenityquantity;
-  else if (amenity.includes("Combo 3")) total += 500 * amenityquantity;
-  else if (amenity.includes("Surprise Combo")) total += 600 * amenityquantity;
+  if (amenity === "Combo 1") total += 350 * amenityquantity;
+  else if (amenity === "Combo 2") total += 450 * amenityquantity;
+  else if (amenity === "Combo 3") total += 500 * amenityquantity;
+  else if (amenity === "Surprise Combo") total += 600 * amenityquantity;
 
   upgrades.forEach((cb) => {
     if (cb.value === "VIP Parking Pass") total += 1000;
@@ -606,7 +719,7 @@ function calculateTotal() {
     else if (cb.value === "Toilets") total += 100;
   });
 
-  const promoCode = document.getElementById("promocode").innerText.trim().toUpperCase();
+  const promoCode = document.getElementById("promocode").innerText.trim();
   if (promoCode === "DISCOUNT50") total -= 50;
 
   if (total < 0) total = 0;
